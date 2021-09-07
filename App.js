@@ -49,9 +49,11 @@ const CrocodileScreen = () => (
 )
 
 const SnakeScreen = () => (
-  <View>
-    <Text>Snake</Text>
-  </View>
+  <WebView
+  scalesPageToFit={false}
+  originWhitelist={['*']}
+  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSRDsWJJwV3olvZ-XDfk0WdBW0d0NI0Y6MYI1v0f_GWQWQ5LvkVZ4vDNoZBcdiS_A/embed?start=true&loop=true&delayms=10000" frameborder="0" width="960" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}
+  />
 )
 
 const TurtleScreen = () => (
