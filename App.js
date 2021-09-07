@@ -55,9 +55,12 @@ const SnakeScreen = () => (
 )
 
 const TurtleScreen = () => (
-  <View>
-    <Text>Turtle</Text>
-  </View>
+  <WebView
+  style={{}}
+  scalesPageToFit={false}
+  originWhitelist={['*']}
+  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=10000" frameborder="0" width="1181" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
+   />
 )
 
 const Stack = createStackNavigator();
@@ -125,8 +128,3 @@ const styles = StyleSheet.create({
 
 
 
-{/* <WebView
-style={{height: 100, width: 100}}
-originWhitelist={['*']}
-source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=10000" frameborder="0" width="864" height="1181" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
-/> */}
