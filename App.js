@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { Button, StyleSheet, Text, View, Image, TouchableOpacity, Pressable } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 import { WebView } from 'react-native-webview';
 import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
+import { Video, AVPlaybackStatus } from 'expo-av';
 
 const crocodile = require('./images/crocodile.jpg')
 const snake = require('./images/snake.jpg')
@@ -21,26 +22,129 @@ const WelcomeScreen = () => {
 
   return ( 
   <View style={styles.container}>
-  <View style={styles.textContainer}>
-    <Text style={styles.basetext}>Welcome to the interactive nature lab! </Text>
-    <Text style={styles.subtitle}>Click below to learn more about each animal</Text>
-  </View>
-{/* <StatusBar style="auto" /> */}
+    <View style={styles.textContainer}>
+      <Text style={styles.basetext}>Welcome to the interactive nature lab! </Text>
+      <Text style={styles.subtitle}>Click below to learn more about each animal</Text>
+      {/* <Button title="Hear from Researchers" color='black' onPress={() => navigation.navigate('Videos')}></Button> */}
+    </View>
+    <View>
+    <Pressable style={styles.button} onPress={() => navigation.navigate('Videos')}>
+      <Text style={styles.text}>Hear from Researchers</Text>
+    </Pressable>
+    </View>
+    {/* <StatusBar style="auto" /> */}
 
-<View style={styles.images}>
-  <TouchableOpacity onPress={() => navigation.navigate('Crocodile')}>
-      <Image style={{width:150, height: 150, margin: 5, borderRadius: 10}} source={ crocodile }></Image>
-  </TouchableOpacity>
-  <TouchableOpacity onPress={() => navigation.navigate('Snake')}>
-      <Image style={{width:150, height: 150, margin: 5, borderRadius: 10}} source={ snake }></Image>
-  </TouchableOpacity>  
-  <TouchableOpacity onPress={() => navigation.navigate('Turtle')}>
-      <Image style={{width:150, height: 150, margin: 5, borderRadius: 10}} source={turtle}></Image>
-  </TouchableOpacity> 
-    
-</View>  
+    <View style={styles.images}>
+      <TouchableOpacity onPress={() => navigation.navigate('Crocodile')}>
+        <Image style={{width:150, height: 150, margin: 5, borderRadius: 10 }} source={ crocodile }></Image>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Snake')}>
+        <Image style={{width:150, height: 150, margin: 5, borderRadius: 10}} source={ snake }></Image>
+      </TouchableOpacity>  
+      <TouchableOpacity onPress={() => navigation.navigate('Turtle')}>
+        <Image style={{width:150, height: 150, margin: 5, borderRadius: 10}} source={turtle}></Image>
+      </TouchableOpacity>
+    </View>  
 </View>
 )}
+
+const Videos = () => {
+  const navigation = useNavigation()
+  return (
+    <View>
+      <Pressable style={styles.button} onPress={() => navigation.navigate('InterviewOne')}>
+        <Text style={styles.text}>Interview One</Text>
+      </Pressable>
+      <Pressable style={styles.button} onPress={() => navigation.navigate('InterviewTwo')}>
+        <Text style={styles.text}>Interview Two</Text>
+      </Pressable>
+      <Pressable style={styles.button} onPress={() => navigation.navigate('InterviewThree')}>
+        <Text style={styles.text}>Interview Three</Text>
+      </Pressable>
+    </View>
+  );
+}
+
+const InterviewOne = () => {
+  const video = React.useRef(null);
+  const [status, setStatus] = React.useState({});
+  return (
+  <View style={styles.container}>
+  <Video
+    ref={video}
+    style={styles.video}
+    source={{
+      uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
+    }}
+    useNativeControls
+    resizeMode="contain"
+    isLooping
+    onPlaybackStatusUpdate={status => setStatus(() => status)}
+  />
+  <View style={styles.buttons}>
+    <Button
+      title={status.isPlaying ? 'Pause' : 'Play'}
+      onPress={() =>
+        status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
+      }
+    />
+  </View>
+</View>
+  )}
+
+  const InterviewTwo = () => {
+    const video = React.useRef(null);
+    const [status, setStatus] = React.useState({});
+    return (
+    <View style={styles.container}>
+    <Video
+      ref={video}
+      style={styles.video}
+      source={{
+        uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
+      }}
+      useNativeControls
+      resizeMode="contain"
+      isLooping
+      onPlaybackStatusUpdate={status => setStatus(() => status)}
+    />
+    <View style={styles.buttons}>
+      <Button
+        title={status.isPlaying ? 'Pause' : 'Play'}
+        onPress={() =>
+          status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
+        }
+      />
+    </View>
+  </View>
+    )}
+
+    const InterviewThree = () => {
+      const video = React.useRef(null);
+      const [status, setStatus] = React.useState({});
+      return (
+      <View style={styles.container}>
+      <Video
+        ref={video}
+        style={styles.video}
+        source={{
+          uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
+        }}
+        useNativeControls
+        resizeMode="contain"
+        isLooping
+        onPlaybackStatusUpdate={status => setStatus(() => status)}
+      />
+      <View style={styles.buttons}>
+        <Button
+          title={status.isPlaying ? 'Pause' : 'Play'}
+          onPress={() =>
+            status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
+          }
+        />
+      </View>
+    </View>
+      )}    
 
 const CrocodileScreen = () => (
   <View>
@@ -80,11 +184,14 @@ export default props => {
     <NavigationContainer>
         <Stack.Navigator> 
           <Stack.Screen name="Welcome" component={WelcomeScreen}/>
+          <Stack.Screen name="Videos"  component={Videos}/>
           <Stack.Screen name="Crocodile" component={CrocodileScreen}/>
           <Stack.Screen name="Snake" component={SnakeScreen}/>
           <Stack.Screen name="Turtle" component={TurtleScreen}/>
+          <Stack.Screen name="InterviewOne" component={InterviewOne}/>
+          <Stack.Screen name="InterviewTwo" component={InterviewTwo}/>
+          <Stack.Screen name="InterviewThree" component={InterviewThree}/>
         </Stack.Navigator>
-
     </NavigationContainer>
     );
   }
@@ -124,7 +231,37 @@ const styles = StyleSheet.create({
     padding: 50,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '90%'
+    width: '90%',
+    shadowColor: '#000', 
+    shadowOpacity: 0.1, 
+    shadowRadius: 2, 
+    shadowOffset: {width: 0, height: 2},
+  },
+  video: {
+    alignSelf: 'center',
+    width: 320,
+    height: 200,
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 2,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'black',
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
   },
 });
 
