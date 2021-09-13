@@ -51,7 +51,8 @@ const WelcomeScreen = () => {
 const Videos = () => {
   const navigation = useNavigation()
   return (
-    <View>
+    <View style={{flex:1, justifyContent: 'center', alignContent: 'center', width: 500, marginLeft: 150, backgroundColor: '#4F6F18', padding: 20}}>
+      <Text style={styles.subtitle}>Hear more from the researchers themselves! Click each button below to hear a short interview about their work.</Text>
       <Pressable style={styles.button} onPress={() => navigation.navigate('InterviewOne')}>
         <Text style={styles.text}>Interview One</Text>
       </Pressable>
@@ -147,9 +148,12 @@ const InterviewOne = () => {
       )}    
 
 const CrocodileScreen = () => (
-  <View>
-    <Text>Crocodile</Text>
-  </View>
+    <WebView
+      scalesPageToFit={false}
+      originWhitelist={['*']}
+      source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSgI3ONxGNjkSqJXWmvR7_z6Yds3-3hiN50L77DW5O5uNM1q4qPzc3VHopxkcTRGg/embed?start=true&loop=true&delayms=10000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}
+    /> 
+
 )
 
 const SnakeScreen = () => (
@@ -167,6 +171,8 @@ const TurtleScreen = () => (
   originWhitelist={['*']}
   source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=10000" frameborder="0" width="1181" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
    />
+
+
 )
 
 const Stack = createStackNavigator();
@@ -250,11 +256,12 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 20,
     paddingVertical: 12,
-    paddingHorizontal: 2,
+    paddingHorizontal: 5,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: 'black',
+    backgroundColor: '#B4D88B',
   },
   text: {
     fontSize: 16,
