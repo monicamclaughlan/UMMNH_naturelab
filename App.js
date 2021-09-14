@@ -147,13 +147,30 @@ const InterviewOne = () => {
     </View>
       )}    
 
-const CrocodileScreen = () => (
+const CrocodileScreen = () => {
+  const navigation = useNavigation();
+  return (
+  <>
     <WebView
       scalesPageToFit={false}
       originWhitelist={['*']}
       source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSgI3ONxGNjkSqJXWmvR7_z6Yds3-3hiN50L77DW5O5uNM1q4qPzc3VHopxkcTRGg/embed?start=true&loop=true&delayms=10000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}
     /> 
+    <View>
+    <Pressable style={styles.button} onPress={() => navigation.navigate('Phytosaur')}>
+        <Text style={styles.text}>Phytosaur 3D Skull</Text>
+      </Pressable>
+    </View>
+</>
+)}
 
+const Phytosaur = () => ( 
+  <WebView
+    scalesPageToFit={false}
+    originWhitelist={['*']}
+    useWebKit={true}
+    source={{ html: '<iframe src="https://onedrive.live.com/embed?cid=299B17EEA40A8444&resid=299B17EEA40A8444%21281&authkey=AMrkRoVFtaGzRPs" width="98" height="120" frameborder="0" scrolling="no"></iframe>'}}
+  />
 )
 
 const SnakeScreen = () => (
@@ -171,8 +188,6 @@ const TurtleScreen = () => (
   originWhitelist={['*']}
   source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=10000" frameborder="0" width="1181" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
    />
-
-
 )
 
 const Stack = createStackNavigator();
@@ -192,6 +207,7 @@ export default props => {
           <Stack.Screen name="Welcome" component={WelcomeScreen}/>
           <Stack.Screen name="Videos"  component={Videos}/>
           <Stack.Screen name="Crocodile" component={CrocodileScreen}/>
+          <Stack.Screen name="Phytosaur"  component={Phytosaur}/>
           <Stack.Screen name="Snake" component={SnakeScreen}/>
           <Stack.Screen name="Turtle" component={TurtleScreen}/>
           <Stack.Screen name="InterviewOne" component={InterviewOne}/>
