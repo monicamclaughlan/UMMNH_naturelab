@@ -91,7 +91,7 @@ const InterviewOne = () => {
       uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
     }}
     useNativeControls
-    resizeMode="contain"
+    resizeMode="cover"
     isLooping
     onPlaybackStatusUpdate={status => setStatus(() => status)}
   />
@@ -118,7 +118,7 @@ const InterviewOne = () => {
         uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
       }}
       useNativeControls
-      resizeMode="contain"
+      resizeMode="cover"
       isLooping
       onPlaybackStatusUpdate={status => setStatus(() => status)}
     />
@@ -145,7 +145,7 @@ const InterviewOne = () => {
           uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
         }}
         useNativeControls
-        resizeMode="contain"
+        resizeMode="cover"
         isLooping
         onPlaybackStatusUpdate={status => setStatus(() => status)}
       />
@@ -332,8 +332,8 @@ const styles = StyleSheet.create({
   },
   video: {
     alignSelf: 'center',
-    width: 320,
-    height: 200,
+    width: 675,
+    height: 400,
   },
   buttons: {
     flexDirection: 'row',
