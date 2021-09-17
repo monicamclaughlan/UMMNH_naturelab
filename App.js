@@ -8,6 +8,7 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { Video, AVPlaybackStatus } from 'expo-av';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { TimerContext } from './context/screensaver';
 
 const crocodile = require('./images/crocodile.jpg')
 const snake = require('./images/snake.jpg')
@@ -22,9 +23,12 @@ const turtle = require('./images/turtle.jpg')
 
 const WelcomeScreen = () => { 
  const navigation = useNavigation()
-
+  const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
   return (
-  <View style={styles.container}>
+  <View style={styles.container} onTouchStart={() => {
+    setCountdownTimer(10)
+  }
+  }>
     <View style={styles.textContainer}>
       <Text style={styles.basetext}>Welcome to the interactive nature lab! </Text>
       <Text style={styles.subtitle}>Click below to learn more about each animal</Text>
@@ -73,7 +77,7 @@ const Videos = () => {
 
 const InterviewOne = () => {
   const video = React.useRef(null);
-  const [status, setStatus] = React.useState({});
+  const [status, setStatus] = useState({});
   return (
   <View style={styles.container}>
   <Video
@@ -100,7 +104,7 @@ const InterviewOne = () => {
 
   const InterviewTwo = () => {
     const video = React.useRef(null);
-    const [status, setStatus] = React.useState({});
+    const [status, setStatus] = useState({});
     return (
     <View style={styles.container}>
     <Video
@@ -127,7 +131,7 @@ const InterviewOne = () => {
 
     const InterviewThree = () => {
       const video = React.useRef(null);
-      const [status, setStatus] = React.useState({});
+      const [status, setStatus] = useState({});
       return (
       <View style={styles.container}>
       <Video
@@ -199,18 +203,18 @@ const Stack = createStackNavigator();
 
 export default App => {
 
-  const [countdownTimer, setCountdownTimer] = useState(10)
+  const [countdownTimer, setCountdownTimer] = useState(10);
 
   const [active, setActive] = useState(false)
-
+  let timer;
   const toggle = () => { 
     console.log("is false")
     setActive(false)
     setCountdownTimer(10)
+    clearTimeout(timer);
   }
 
   const playScreensaverVideo = () => {
-    console.log("video")
     const {width, height} = Dimensions.get('window')
     return (
       <TouchableOpacity onPress={toggle}>
@@ -227,20 +231,21 @@ export default App => {
   )}
 
 
-  let myTimer;
   useEffect(() => {
     if(countdownTimer > 0){ 
-      myTimer = setTimeout( () => {
+      timer = setTimeout( () => {
         setCountdownTimer(countdownTimer - 1);
         console.log(countdownTimer);
       }, 1000);
-    }else { 
-      console.log("IM GONNA BLOW")
+    }else {
       setActive(true);
-      clearTimeout(myTimer)
+      clearTimeout(timer);
       // playScreensaverVideo()
     }
-  })
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [])
   
   let [fontsLoaded] = useFonts({
     'Eurostile': require('./assets/fonts/EurostileLTStd-Bold.otf'),
@@ -254,26 +259,28 @@ export default App => {
   }
     else {
       return (
-    <NavigationContainer>
-        <Stack.Navigator
-            screenListeners={{
-              tabPress: (e)=> {
-                setCountdownTimer(10)
-                clearTimeout(myTimer)
-              }
-            }}
-        > 
-          <Stack.Screen name="Welcome" component={WelcomeScreen}/>
-          <Stack.Screen name="Videos"  component={Videos}/>
-          <Stack.Screen name="Crocodile" component={CrocodileScreen}/>
-          <Stack.Screen name="Phytosaur"  component={Phytosaur}/>
-          <Stack.Screen name="Snake" component={SnakeScreen}/>
-          <Stack.Screen name="Turtle" component={TurtleScreen}/>
-          <Stack.Screen name="InterviewOne" component={InterviewOne}/>
-          <Stack.Screen name="InterviewTwo" component={InterviewTwo}/>
-          <Stack.Screen name="InterviewThree" component={InterviewThree}/>
-        </Stack.Navigator>
-    </NavigationContainer>
+    <TimerContext.Provider value={{countdownTimer,setCountdownTimer}}>
+      <NavigationContainer>
+          <Stack.Navigator
+              screenListeners={{
+                tabPress: (e)=> {
+                  setCountdownTimer(10)
+                  clearTimeout(myTimer)
+                }
+              }}
+          > 
+            <Stack.Screen name="Welcome" component={WelcomeScreen}/>
+            <Stack.Screen name="Videos"  component={Videos}/>
+            <Stack.Screen name="Crocodile" component={CrocodileScreen}/>
+            <Stack.Screen name="Phytosaur"  component={Phytosaur}/>
+            <Stack.Screen name="Snake" component={SnakeScreen}/>
+            <Stack.Screen name="Turtle" component={TurtleScreen}/>
+            <Stack.Screen name="InterviewOne" component={InterviewOne}/>
+            <Stack.Screen name="InterviewTwo" component={InterviewTwo}/>
+            <Stack.Screen name="InterviewThree" component={InterviewThree}/>
+          </Stack.Navigator>
+      </NavigationContainer>
+    </TimerContext.Provider>
     );
   }
 };
