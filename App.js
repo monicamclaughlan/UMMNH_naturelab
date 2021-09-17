@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
-import { Button, Dimensions, StyleSheet, Text, View, Image, TouchableOpacity, Pressable, AppSafeArea } from 'react-native';
+import { Button, Dimensions, StyleSheet, Text, View, Image, TouchableOpacity, Pressable} from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 import { WebView } from 'react-native-webview';
 import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { Video, AVPlaybackStatus } from 'expo-av';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { Video } from 'expo-av';
 import { TimerContext } from './context/screensaver';
+import {DEVICE_HEIGHT, DEVICE_WIDTH} from './assets/utils';
 
 const crocodile = require('./images/crocodile.jpg')
 const snake = require('./images/snake.jpg')
@@ -26,18 +26,16 @@ const WelcomeScreen = () => {
   const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
   return (
   <View style={styles.container} onTouchStart={() => {
-    setCountdownTimer(10)
+    setCountdownTimer(300)
   }
   }>
     <View style={styles.textContainer}>
       <Text style={styles.basetext}>Welcome to the interactive nature lab! </Text>
       <Text style={styles.subtitle}>Click below to learn more about each animal</Text>
       {/* <Button title="Hear from Researchers" color='black' onPress={() => navigation.navigate('Videos')}></Button> */}
-    </View>
-    <View>
-    <Pressable style={styles.button} onPress={() => navigation.navigate('Videos')}>
+      <Pressable style={styles.button} onPress={() => navigation.navigate('Videos')}>
       <Text style={styles.text}>Hear from Researchers</Text>
-    </Pressable>
+      </Pressable>
     </View>
     {/* <StatusBar style="auto" /> */}
 
@@ -61,11 +59,11 @@ const Videos = () => {
   const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
   const navigation = useNavigation()
   return (
-    <View style={{flex:1, justifyContent: 'center', alignContent: 'center', width: 500, marginLeft: 150, backgroundColor: '#4F6F18', padding: 20}} onTouchStart={() => {
-      setCountdownTimer(10)
+    <View style={{flex:1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#4F6F18', marginLeft: 50, marginRight: 50}} onTouchStart={() => {
+      setCountdownTimer(300)
     }
     }>
-      <Text style={styles.subtitle}>Hear more from the researchers themselves! Click each button below to hear a short interview about their work.</Text>
+      <Text style={[styles.subtitle, {width: '90%'}]}>Hear more from the researchers themselves! Click each button below to hear a short interview about their work.</Text>
       <Pressable style={styles.button} onPress={() => navigation.navigate('InterviewOne')}>
         <Text style={styles.text}>Interview One</Text>
       </Pressable>
@@ -168,22 +166,24 @@ const CrocodileScreen = () => {
     <WebView
       scalesPageToFit={false}
       originWhitelist={['*']}
-      source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSgI3ONxGNjkSqJXWmvR7_z6Yds3-3hiN50L77DW5O5uNM1q4qPzc3VHopxkcTRGg/embed?start=true&loop=true&delayms=10000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}  
+      source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSgI3ONxGNjkSqJXWmvR7_z6Yds3-3hiN50L77DW5O5uNM1q4qPzc3VHopxkcTRGg/embed?start=true&loop=true&delayms=10000" frameborder="0" width="960" height="430" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}  
     /> 
-    <View>
-    <Pressable style={styles.button} onPress={() => navigation.navigate('Phytosaur')}>
-        <Text style={styles.text}>Phytosaur 3D Skull</Text>
-      </Pressable>
-    </View>
+   
 </>
 )}
+
+{/* <View>
+<Pressable style={styles.button} onPress={() => navigation.navigate('Phytosaur')}>
+    <Text style={styles.text}>Phytosaur 3D Skull</Text>
+  </Pressable>
+</View> */}
 
 const Phytosaur = () => ( 
   <WebView
     scalesPageToFit={false}
     originWhitelist={['*']}
     useWebKit={true}
-    source={{ html: '<iframe src="https://onedrive.live.com/embed?cid=299B17EEA40A8444&resid=299B17EEA40A8444%21281&authkey=AMrkRoVFtaGzRPs" width="98" height="120" frameborder="0" scrolling="no"></iframe>'}}
+    source={{ html: '<iframe src="https://onedrive.live.com/embed?cid=299B17EEA40A8444&resid=299B17EEA40A8444%21281&authkey=AMrkRoVFtaGzRPs" width="960" height="450" frameborder="0" scrolling="no"></iframe>'}}
   />
 )
 
@@ -208,14 +208,14 @@ const Stack = createStackNavigator();
 
 export default App => {
 
-  const [countdownTimer, setCountdownTimer] = useState(10);
+  const [countdownTimer, setCountdownTimer] = useState(300);
 
   const [active, setActive] = useState(false)
   let timer;
   const toggle = () => { 
     console.log("is false")
     setActive(false)
-    setCountdownTimer(10)
+    setCountdownTimer(300)
     clearTimeout(timer);
   }
 
@@ -240,7 +240,7 @@ export default App => {
     if(countdownTimer > 0){ 
       timer = setTimeout( () => {
         setCountdownTimer(countdownTimer - 1);
-        console.log(countdownTimer);
+        // console.log(countdownTimer);
       }, 1000);
     }else {
       setActive(true);
@@ -269,7 +269,7 @@ export default App => {
           <Stack.Navigator
               screenListeners={{
                 tabPress: (e)=> {
-                  setCountdownTimer(10)
+                  setCountdownTimer(300)
                   clearTimeout(myTimer)
                 }
               }}
@@ -295,12 +295,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   textContainer: { 
+    flex: 1,
+    alignItems: 'center',
     backgroundColor: '#4F6F18',
     marginTop: 40,
-    width: '90%'
+    width: DEVICE_WIDTH * 0.92,
   },
   basetext: { 
     fontSize: 30,
@@ -319,6 +321,8 @@ const styles = StyleSheet.create({
     fontFamily: 'AG',
   },
   images: { 
+    flex: 1,
+    alignItems: 'center',
     marginTop: 50,
     backgroundColor: '#B4D88B',
     padding: 50,
@@ -349,6 +353,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     elevation: 3,
     backgroundColor: '#B4D88B',
+    width: DEVICE_WIDTH * .50,
   },
   text: {
     fontSize: 16,
