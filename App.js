@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import * as React from 'react';
-import { Button, StyleSheet, Text, View, Image, TouchableOpacity, Pressable } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import { Button, Dimensions, StyleSheet, Text, View, Image, TouchableOpacity, Pressable, AppSafeArea } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 import { WebView } from 'react-native-webview';
 import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { Video, AVPlaybackStatus } from 'expo-av';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 const crocodile = require('./images/crocodile.jpg')
 const snake = require('./images/snake.jpg')
@@ -16,11 +17,13 @@ const turtle = require('./images/turtle.jpg')
 // await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT);
 // }
 
+
+
+
 const WelcomeScreen = () => { 
+ const navigation = useNavigation()
 
-  const navigation = useNavigation()
-
-  return ( 
+  return (
   <View style={styles.container}>
     <View style={styles.textContainer}>
       <Text style={styles.basetext}>Welcome to the interactive nature lab! </Text>
@@ -47,6 +50,8 @@ const WelcomeScreen = () => {
     </View>  
 </View>
 )}
+
+
 
 const Videos = () => {
   const navigation = useNavigation()
@@ -192,7 +197,51 @@ const TurtleScreen = () => (
 
 const Stack = createStackNavigator();
 
-export default props => {
+export default App => {
+
+  const [countdownTimer, setCountdownTimer] = useState(10)
+
+  const [active, setActive] = useState(false)
+
+  const toggle = () => { 
+    console.log("is false")
+    setActive(false)
+    setCountdownTimer(10)
+  }
+
+  const playScreensaverVideo = () => {
+    console.log("video")
+    const {width, height} = Dimensions.get('window')
+    return (
+      <TouchableOpacity onPress={toggle}>
+        <View>
+          <Video
+              source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+              shouldPlay
+              isLooping
+              resizeMode="cover"
+              style={{ width, height }}
+            />
+        </View>
+      </TouchableOpacity>
+  )}
+
+
+  let myTimer;
+  useEffect(() => {
+    if(countdownTimer > 0){ 
+      myTimer = setTimeout( () => {
+        setCountdownTimer(countdownTimer - 1);
+        console.log(countdownTimer);
+      }, 1000);
+    }else { 
+      console.log("IM GONNA BLOW")
+      setActive(true);
+      clearTimeout(myTimer)
+      // playScreensaverVideo()
+    }
+  })
+  
   let [fontsLoaded] = useFonts({
     'Eurostile': require('./assets/fonts/EurostileLTStd-Bold.otf'),
     'AG': require('./assets/fonts/AGaramondPro-Regular.otf')
@@ -200,10 +249,20 @@ export default props => {
 
   if (!fontsLoaded) {
     return <AppLoading />;
-  } else {
-    return (
+  } else if(active) {
+    return playScreensaverVideo()
+  }
+    else {
+      return (
     <NavigationContainer>
-        <Stack.Navigator> 
+        <Stack.Navigator
+            screenListeners={{
+              tabPress: (e)=> {
+                setCountdownTimer(10)
+                clearTimeout(myTimer)
+              }
+            }}
+        > 
           <Stack.Screen name="Welcome" component={WelcomeScreen}/>
           <Stack.Screen name="Videos"  component={Videos}/>
           <Stack.Screen name="Crocodile" component={CrocodileScreen}/>
@@ -286,6 +345,15 @@ const styles = StyleSheet.create({
     letterSpacing: 0.25,
     color: 'white',
   },
+  screensaver: { 
+    position: "absolute", 
+    top: 0, 
+    left: 0, 
+    bottom: 0, 
+    right: 0, 
+    alignItems: 'stretch', 
+    zIndex: 2, 
+  }
 });
 
 
