@@ -273,7 +273,7 @@ export default App => {
           <Stack.Screen name="InterviewTwo" component={InterviewTwo}/>
           <Stack.Screen name="InterviewThree" component={InterviewThree}/>
         </Stack.Navigator>
-    </NavigationContainer>
+      </NavigationContainer>
     );
   }
 };
