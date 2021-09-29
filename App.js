@@ -29,25 +29,30 @@ const WelcomeScreen = () => {
     setCountdownTimer(300)
   }
   }>
-    <View style={styles.textContainer}>
+    <View style={[styles.textContainer, {marginTop:20, paddingTop: 20}]}>
       <Text style={styles.basetext}>Welcome to the interactive nature lab! </Text>
-      <Text style={styles.subtitle}>Click below to learn more about each animal</Text>
+     
       {/* <Button title="Hear from Researchers" color='black' onPress={() => navigation.navigate('Videos')}></Button> */}
-      <Pressable style={styles.button} onPress={() => navigation.navigate('Videos')}>
-      <Text style={styles.text}>Hear from Researchers</Text>
+      <Pressable style={[styles.button, {width: 400, height: 50}]} onPress={() => navigation.navigate('Videos')}>
+      <Text style={styles.text}>Hear more from Researchers at the Lab</Text>
       </Pressable>
+      <Text style={[styles.subtitle, {paddingTop: 30}]}>Click on the images below to learn more about each animal</Text>
     </View>
     {/* <StatusBar style="auto" /> */}
-
+  
     <View style={styles.images}>
-      <TouchableOpacity onPress={() => navigation.navigate('Crocodile')}>
+   
+      <TouchableOpacity onPress={() => navigation.navigate('Phytosaur')}>
         <Image style={{width:150, height: 150, margin: 5, borderRadius: 10 }} source={ crocodile }></Image>
+        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Phytosaur</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Snake')}>
         <Image style={{width:150, height: 150, margin: 5, borderRadius: 10}} source={ snake }></Image>
+        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Snake Fangs</Text>
       </TouchableOpacity>  
       <TouchableOpacity onPress={() => navigation.navigate('Turtle')}>
         <Image style={{width:150, height: 150, margin: 5, borderRadius: 10}} source={turtle}></Image>
+        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Turtles</Text>
       </TouchableOpacity>
     </View>  
 </View>
@@ -63,7 +68,8 @@ const Videos = () => {
       setCountdownTimer(300)
     }
     }>
-      <Text style={[styles.subtitle, {width: '90%'}]}>Hear more from the researchers themselves! Click each button below to hear a short interview about their work.</Text>
+      <Text style={[styles.subtitle, {width: '90%'}]}>Hear more from the researchers themselves! </Text>
+      <Text style={[styles.subtitle, {width: '90%'}]}>Click each button below to hear a short interview about their work.</Text>
       <Pressable style={styles.button} onPress={() => navigation.navigate('InterviewOne')}>
         <Text style={styles.text}>Interview One</Text>
       </Pressable>
@@ -166,7 +172,7 @@ const CrocodileScreen = () => {
     <WebView
       scalesPageToFit={false}
       originWhitelist={['*']}
-      source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSgI3ONxGNjkSqJXWmvR7_z6Yds3-3hiN50L77DW5O5uNM1q4qPzc3VHopxkcTRGg/embed?start=true&loop=true&delayms=10000" frameborder="0" width="960" height="430" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}  
+      source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSgI3ONxGNjkSqJXWmvR7_z6Yds3-3hiN50L77DW5O5uNM1q4qPzc3VHopxkcTRGg/embed?start=true&loop=true&delayms=60000" frameborder="0" width="960" height="660" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}  
     /> 
    
 </>
@@ -178,20 +184,20 @@ const CrocodileScreen = () => {
   </Pressable>
 </View> */}
 
-const Phytosaur = () => ( 
-  <WebView
-    scalesPageToFit={false}
-    originWhitelist={['*']}
-    useWebKit={true}
-    source={{ html: '<iframe src="https://onedrive.live.com/embed?cid=299B17EEA40A8444&resid=299B17EEA40A8444%21281&authkey=AMrkRoVFtaGzRPs" width="960" height="450" frameborder="0" scrolling="no"></iframe>'}}
-  />
-)
+// const Phytosaur = () => ( 
+//   <WebView
+//     scalesPageToFit={false}
+//     originWhitelist={['*']}
+//     useWebKit={true}
+//     source={{ html: '<iframe src="https://onedrive.live.com/embed?cid=299B17EEA40A8444&resid=299B17EEA40A8444%21281&authkey=AMrkRoVFtaGzRPs" width="960" height="450" frameborder="0" scrolling="no"></iframe>'}}
+//   />
+// )
 
 const SnakeScreen = () => (
   <WebView
   scalesPageToFit={false}
   originWhitelist={['*']}
-  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSRDsWJJwV3olvZ-XDfk0WdBW0d0NI0Y6MYI1v0f_GWQWQ5LvkVZ4vDNoZBcdiS_A/embed?start=true&loop=true&delayms=10000" frameborder="0" width="960" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}
+  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSRDsWJJwV3olvZ-XDfk0WdBW0d0NI0Y6MYI1v0f_GWQWQ5LvkVZ4vDNoZBcdiS_A/embed?start=true&loop=true&delayms=60000" frameborder="0" width="960" height="660" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}
   />
 )
 
@@ -200,7 +206,7 @@ const TurtleScreen = () => (
   style={{}}
   scalesPageToFit={false}
   originWhitelist={['*']}
-  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=10000" frameborder="0" width="1181" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
+  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=60000" frameborder="0" width="1000" height="680" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
    />
 )
 
@@ -276,8 +282,8 @@ export default App => {
           > 
             <Stack.Screen name="Welcome" component={WelcomeScreen}/>
             <Stack.Screen name="Videos"  component={Videos}/>
-            <Stack.Screen name="Crocodile" component={CrocodileScreen}/>
-            <Stack.Screen name="Phytosaur"  component={Phytosaur}/>
+            <Stack.Screen name="Phytosaur" component={CrocodileScreen}/>
+            {/* <Stack.Screen name="Phytosaur"  component={Phytosaur}/> */}
             <Stack.Screen name="Snake" component={SnakeScreen}/>
             <Stack.Screen name="Turtle" component={TurtleScreen}/>
             <Stack.Screen name="InterviewOne" component={InterviewOne}/>
@@ -295,14 +301,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center', 
   },
   textContainer: { 
     flex: 1,
     alignItems: 'center',
     backgroundColor: '#4F6F18',
     marginTop: 40,
-    width: DEVICE_WIDTH * 0.92,
+    width: '90%',
+    borderRadius: 10,
   },
   basetext: { 
     fontSize: 30,
@@ -313,7 +320,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   }, 
   subtitle: { 
-    fontSize: 20, 
+    fontSize: 30, 
     color: 'white',
     marginBottom: 20, 
     padding: 10, 
@@ -333,6 +340,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1, 
     shadowRadius: 2, 
     shadowOffset: {width: 0, height: 2},
+    borderRadius: 10,
   },
   video: {
     alignSelf: 'center',
@@ -356,7 +364,7 @@ const styles = StyleSheet.create({
     width: DEVICE_WIDTH * .50,
   },
   text: {
-    fontSize: 16,
+    fontSize: 20,
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
