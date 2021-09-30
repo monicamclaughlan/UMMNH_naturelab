@@ -2,6 +2,7 @@ import React from 'react'
 import {View, Text, Image, Pressable, StyleSheet} from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
+import ThreeDPhytosaur from './ThreeDPhytosaur';
 
 const skull = require('../images/skull_bullet.png')
 
@@ -13,7 +14,9 @@ export const PhytosaurTwo = () => {
       };
 
     return (
+    
     <View style={styles.container}>
+        <ThreeDPhytosaur /> 
         <View>
             <Text style={styles.heading}>Phytosaur</Text>
         </View>

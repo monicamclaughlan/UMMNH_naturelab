@@ -12,16 +12,18 @@
     "@react-navigation/stack": "^6.0.7",
     "expo": "~42.0.1",
     "expo-app-loading": "^1.1.2",
+    "expo-av": "~9.2.3",
     "expo-status-bar": "~1.0.4",
+    "expo-three": "^6.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-gesture-handler": "~1.10.2",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.4.0",
     "react-native-web": "~0.13.12",
     "react-native-webview": "11.6.2",
-    "react-native-gesture-handler": "~1.10.2",
-    "expo-av": "~9.2.3"
+    "three": "^0.133.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
