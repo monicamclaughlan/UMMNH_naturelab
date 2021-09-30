@@ -4,6 +4,8 @@ import { useFonts } from 'expo-font';
 import { Phytosaur } from '../slides/Phytosaur';
 import { Story } from '../slides/Story';
 import {Help} from '../slides/Help';
+import {HelpTwo} from '../slides/HelpTwo';
+import {PhytosaurTwo} from '../slides/PhytosaurTwo';
 
 const Stack = createStackNavigator()
 
@@ -21,6 +23,8 @@ const PhytosaurStack = () => {
             <Stack.Screen name={'Phytosaur'} component={Phytosaur}/>
             <Stack.Screen name={'Story'} component={Story}/>
             <Stack.Screen name={'Help'} component={Help}/>
+            <Stack.Screen name={'HelpTwo'} component={HelpTwo}/>
+            <Stack.Screen name={'PhytosaurTwo'} component={PhytosaurTwo}/>
         </Stack.Navigator>
     )
 }

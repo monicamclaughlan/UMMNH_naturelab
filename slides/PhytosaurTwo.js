@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/core';
 
 const skull = require('../images/skull_bullet.png')
 
-export const Help = () => {
+export const PhytosaurTwo = () => {
     const navigation = useNavigation();
 
     const goBack = () => {
@@ -15,11 +15,19 @@ export const Help = () => {
     return (
     <View style={styles.container}>
         <View>
-            <Text style={styles.heading}>We need <Text style={styles.green}>you</Text> to help us!</Text>
+            <Text style={styles.heading}>Phytosaur</Text>
         </View>
         <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
             <Image source={skull} style={styles.skull}/>
-            <Text style={styles.text}>You might be wondering how scientists come up with ideas about how an extinct animal lived.  After all, we can't go out and see these animals in the wild like we can with animals that are alive today.</Text>
+            <Text style={styles.text}>Here is a fossil that we have identified as a <Text style={styles.green}>Phytosaur</Text>!</Text>
+        </View>
+        <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
+            <Image source={skull} style={styles.skull}/>
+            <Text style={styles.text}>Phytosaurs were <Text style={styles.green}>ancient reptiles</Text> from the Late Triassic.</Text>
+        </View>
+        <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
+            <Image source={skull} style={styles.skull}/>
+            <Text style={styles.text}>It looks a lot like a <Text style={styles.green}>crocodilian</Text>, right? Let's compare it to two present day animals and see if we can guess its <Text style={styles.green}>ecomorphology</Text>!</Text>
         </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <View style={styles.arrowContainer}><Pressable onPress={goBack}>

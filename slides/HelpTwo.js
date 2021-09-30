@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/core';
 
 const skull = require('../images/skull_bullet.png')
 
-export const Help = () => {
+export const HelpTwo = () => {
     const navigation = useNavigation();
 
     const goBack = () => {
@@ -19,7 +19,15 @@ export const Help = () => {
         </View>
         <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
             <Image source={skull} style={styles.skull}/>
-            <Text style={styles.text}>You might be wondering how scientists come up with ideas about how an extinct animal lived.  After all, we can't go out and see these animals in the wild like we can with animals that are alive today.</Text>
+            <Text style={styles.text}>We can actually learn a lot about an animal's behavior and habitat by looking at its body.  We call this relationship between body type and behavior/ecology: <Text style={styles.green}>"ecomorphology"</Text>.</Text>
+        </View>
+        <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
+            <Image source={skull} style={styles.skull}/>
+            <Text style={styles.text}>Many animals that do or eat similar things look alike, so we can compare this extinct animal to a living animal that looks like it to learn about how it lived.</Text>
+        </View>
+        <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
+            <Image source={skull} style={styles.skull}/>
+            <Text style={styles.text}>With this presentation, we will walk you through this process so you can see what it's like to be a paleontologist discovering a new species.  We also want to show you that we can learn a lot even when we can't see the animal's whole body.</Text>
         </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <View style={styles.arrowContainer}><Pressable onPress={goBack}>
@@ -27,7 +35,7 @@ export const Help = () => {
                 </Pressable>
             </View>
             <View style={styles.arrowContainer}>
-                <Pressable onPress={() => navigation.navigate('HelpTwo')}>
+                <Pressable onPress={() => navigation.navigate('PhytosaurTwo')}>
                 <AntDesign style={styles.arrow}name="caretright" size={70} color="black" />
                 </Pressable>
             </View>
