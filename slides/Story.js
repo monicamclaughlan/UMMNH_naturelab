@@ -54,37 +54,39 @@ const styles = StyleSheet.create({
         paddingTop: 50, 
         paddingLeft: 50, 
         paddingBottom: 50, 
+        color: '#4F330B',
     },
     firstParagraph: {
         flexDirection: 'row', 
-        width: '90%', 
+        width: '80%', 
         paddingLeft: 30,
     },
     skull: {
         width: 60, 
-        height:20,
+        height:30,
     },
     paragraphText: {
         fontSize: 28, 
         fontFamily: 'Overlock',
+        color: '#4F330B',
     }, 
     green: {
         color: '#404F24',
     },
     bold: {
-        fontFamily: 'OverlockBold'
+        fontFamily: 'OverlockBold',
+        color: '#4F330B',
     },
     secondParagraph: {
         flexDirection: 'row', 
-        width: '90%', 
+        width: '80%', 
         paddingLeft: 30, 
         paddingTop: 10,
     },
     imageContainer: {
         flexDirection: 'row', 
         justifyContent: 'space-between', 
-        paddingTop: 110, 
-        width: '90%',
+        paddingTop: 75, 
     },
     arrowContainer: {
         width: 200, 
