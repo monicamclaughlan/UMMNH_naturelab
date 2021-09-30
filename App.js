@@ -9,6 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { Video } from 'expo-av';
 import { TimerContext } from './context/screensaver';
 import {DEVICE_HEIGHT, DEVICE_WIDTH} from './assets/utils';
+import PhytosaurStack from './navigation/PhytosaurStack';
 
 const crocodile = require('./images/crocodile.jpg')
 const snake = require('./images/snake.jpg')
@@ -43,6 +44,10 @@ const WelcomeScreen = () => {
     <View style={styles.images}>
    
       <TouchableOpacity onPress={() => navigation.navigate('Phytosaur')}>
+        <Image style={{width:150, height: 150, margin: 5, borderRadius: 10 }} source={ crocodile }></Image>
+        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Phytosaur</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('PhytosaurStack')}>
         <Image style={{width:150, height: 150, margin: 5, borderRadius: 10 }} source={ crocodile }></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Phytosaur</Text>
       </TouchableOpacity>
@@ -283,6 +288,7 @@ export default App => {
             <Stack.Screen name="Welcome" component={WelcomeScreen}/>
             <Stack.Screen name="Videos"  component={Videos}/>
             <Stack.Screen name="Phytosaur" component={CrocodileScreen}/>
+            <Stack.Screen name="PhytosaurStack" component={PhytosaurStack}/>
             {/* <Stack.Screen name="Phytosaur"  component={Phytosaur}/> */}
             <Stack.Screen name="Snake" component={SnakeScreen}/>
             <Stack.Screen name="Turtle" component={TurtleScreen}/>
