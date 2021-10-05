@@ -2,7 +2,7 @@ import React from 'react'
 import {View, Text, Image, Pressable, StyleSheet} from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
-import ThreeDPhytosaur from './ThreeDPhytosaur';
+import ThreeDTwo from './ThreeDTwo';
 
 const skull = require('../images/skull_bullet.png')
 
@@ -16,13 +16,15 @@ export const PhytosaurTwo = () => {
     return (
     
     <View style={styles.container}>
-        <ThreeDPhytosaur /> 
         <View>
             <Text style={styles.heading}>Phytosaur</Text>
         </View>
         <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
             <Image source={skull} style={styles.skull}/>
             <Text style={styles.text}>Here is a fossil that we have identified as a <Text style={styles.green}>Phytosaur</Text>!</Text>
+        </View>
+        <View style={{width: 550, height: 250, alignSelf: 'center'}}>
+            <ThreeDTwo /> 
         </View>
         <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
             <Image source={skull} style={styles.skull}/>
