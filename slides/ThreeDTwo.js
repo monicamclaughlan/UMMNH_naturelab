@@ -80,7 +80,7 @@ export default function ThreeDTwo() {
                 // object.rotation.setFromVector3(new THREE.Vector3( Math.PI / 0, 2, 0));
                 function update() {
                     // object.rotation.y += 0.015
-                    object.rotation.x += 0.15
+                    object.rotation.x += 0.015
                     // object.rotation.z += 0.015
                 }
                 const render = () => {
