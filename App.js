@@ -46,11 +46,11 @@ const WelcomeScreen = () => {
         <Image style={{width:150, height: 150, margin: 5, borderRadius: 10 }} source={ crocodile }></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Phytosaur</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Snake')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Snake Fangs')}>
         <Image style={{width:150, height: 150, margin: 5, borderRadius: 10}} source={ snake }></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Snake Fangs</Text>
       </TouchableOpacity>  
-      <TouchableOpacity onPress={() => navigation.navigate('Turtle')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Turtle Shells')}>
         <Image style={{width:150, height: 150, margin: 5, borderRadius: 10}} source={turtle}></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Turtles</Text>
       </TouchableOpacity>
@@ -280,12 +280,12 @@ export default App => {
                 }
               }}
           > 
-            <Stack.Screen name="Welcome" component={WelcomeScreen}/>
+            <Stack.Screen name="Home" component={WelcomeScreen}/>
             <Stack.Screen name="Videos"  component={Videos}/>
             <Stack.Screen name="Phytosaur" component={CrocodileScreen}/>
             {/* <Stack.Screen name="Phytosaur"  component={Phytosaur}/> */}
-            <Stack.Screen name="Snake" component={SnakeScreen}/>
-            <Stack.Screen name="Turtle" component={TurtleScreen}/>
+            <Stack.Screen name="Snake Fangs" component={SnakeScreen}/>
+            <Stack.Screen name="Turtle Shells" component={TurtleScreen}/>
             <Stack.Screen name="InterviewOne" component={InterviewOne}/>
             <Stack.Screen name="InterviewTwo" component={InterviewTwo}/>
             <Stack.Screen name="InterviewThree" component={InterviewThree}/>
@@ -344,8 +344,8 @@ const styles = StyleSheet.create({
   },
   video: {
     alignSelf: 'center',
-    width: 675,
-    height: 400,
+    width: 1000,
+    height: 700,
   },
   buttons: {
     flexDirection: 'row',
