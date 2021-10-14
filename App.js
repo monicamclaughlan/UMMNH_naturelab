@@ -172,7 +172,7 @@ const CrocodileScreen = () => {
     <WebView
       scalesPageToFit={false}
       originWhitelist={['*']}
-      source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSgI3ONxGNjkSqJXWmvR7_z6Yds3-3hiN50L77DW5O5uNM1q4qPzc3VHopxkcTRGg/embed?start=true&loop=true&delayms=60000" frameborder="0" width="960" height="660" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}  
+      source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSgI3ONxGNjkSqJXWmvR7_z6Yds3-3hiN50L77DW5O5uNM1q4qPzc3VHopxkcTRGg/embed?start=true&loop=true&delayms=60000" frameborder="0" width="1430" height="980" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}  
     /> 
    
 </>
@@ -197,7 +197,7 @@ const SnakeScreen = () => (
   <WebView
   scalesPageToFit={false}
   originWhitelist={['*']}
-  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSRDsWJJwV3olvZ-XDfk0WdBW0d0NI0Y6MYI1v0f_GWQWQ5LvkVZ4vDNoZBcdiS_A/embed?start=true&loop=true&delayms=60000" frameborder="0" width="960" height="660" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}
+  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSRDsWJJwV3olvZ-XDfk0WdBW0d0NI0Y6MYI1v0f_GWQWQ5LvkVZ4vDNoZBcdiS_A/embed?start=true&loop=true&delayms=60000" frameborder="0" width="1430" height="980" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}
   />
 )
 
@@ -206,7 +206,7 @@ const TurtleScreen = () => (
   style={{}}
   scalesPageToFit={false}
   originWhitelist={['*']}
-  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=60000" frameborder="0" width="1000" height="680" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
+  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=60000" frameborder="0" width="1430" height="980" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
    />
 )
 
