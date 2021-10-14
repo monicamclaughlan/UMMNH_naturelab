@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontFamily: 'AG',
         textAlign: 'center',
-        paddingBottom: 20,
+        paddingBottom: 40,
         color: '#4F330B',
     },
     iconContainer: {

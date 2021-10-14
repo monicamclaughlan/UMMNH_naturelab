@@ -40,7 +40,7 @@ export const PhytosaurTwo = () => {
                 </Pressable>
             </View>
             <View style={styles.arrowContainer}>
-                <Pressable onPress={() => navigation.navigate('HelpTwo')}>
+                <Pressable onPress={() => navigation.navigate('PresentDay')}>
                 <AntDesign style={styles.arrow}name="caretright" size={70} color="black" />
                 </Pressable>
             </View>

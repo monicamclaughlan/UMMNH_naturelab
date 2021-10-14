@@ -6,6 +6,7 @@ import { Story } from '../slides/Story';
 import {Help} from '../slides/Help';
 import {HelpTwo} from '../slides/HelpTwo';
 import {PhytosaurTwo} from '../slides/PhytosaurTwo';
+import { PresentDay } from '../slides/PresentDay';
 
 const Stack = createStackNavigator()
 
@@ -25,6 +26,7 @@ const PhytosaurStack = () => {
             <Stack.Screen name={'Help'} component={Help}/>
             <Stack.Screen name={'HelpTwo'} component={HelpTwo}/>
             <Stack.Screen name={'PhytosaurTwo'} component={PhytosaurTwo}/>
+            <Stack.Screen name={'PresentDay'} component={PresentDay} />
         </Stack.Navigator>
     )
 }
