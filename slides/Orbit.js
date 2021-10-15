@@ -3,11 +3,11 @@ import {View, Text, Image, Pressable, StyleSheet, Modal} from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
 
-const phytosaur = require('../images/dorsalPhytosaur.png')
-const gharial = require('../images/dorsalGharial.png');
-const caiman = require('../images/dorsalCaiman.png');
+const phytosaur = require('../images/orbitPhytosaur.png')
+const gharial = require('../images/orbitGharial.png');
+const caiman = require('../images/orbitCaiman.png');
 
-export const SkullShape = () => {
+export const Orbit = () => {
     const [modalOneVisible, setModalOneVisible] = useState(false);
     const [modalTwoVisible, setModalTwoVisible] = useState(false);
 
@@ -20,7 +20,7 @@ export const SkullShape = () => {
     return (
     <View style={styles.container}>
         <View>
-            <Text style={styles.heading}>Gross Skull Shape Comparisons</Text>
+            <Text style={styles.heading}>Orbit Comparisons</Text>
             <Text style={[styles.smallText, styles.subtitle]}>Click on the Gharial or Caiman to learn more!</Text>
         </View>
         <View style={styles.imageContainer}>
@@ -39,16 +39,16 @@ export const SkullShape = () => {
                     visible={modalOneVisible}
                     onRequestClose={() => setModalOneVisible(!modalOneVisible)}
                 >
-                    <View style={{backgroundColor: '#404F24', alignItems: 'center', justifyContent:'center', height: 200, width: 350, marginTop: 250, marginLeft: 300}}>
+                    <View style={{backgroundColor: '#404F24', alignItems: 'center', justifyContent:'center', height: 200, width: 350, marginTop: 460, marginLeft: 350}}>
                     <Pressable onPress={() => setModalOneVisible(!modalOneVisible)}>
                         <AntDesign style={{marginRight: 270, marginBottom: 10, marginTop: -30}} name="closecircle" size={30} color="white" />
                     </Pressable>
-                        <Text style={{color: 'white', padding: 10, fontSize: 18, textAlign: 'center'}}>The Gharial's skull is long and skinny.  This allows it to close it very fast and eat a diet of mostly <Text style={{fontStyle: 'italic'}}>fish.</Text></Text>
+                        <Text style={{color: 'white', padding: 10, fontSize: 18, textAlign: 'center'}}>The Gharial's eyes are positioned so it can hunt better underwater, making it easier to catch <Text style={{fontStyle: 'italic'}}>fish.</Text></Text>
                     </View>
                 </Modal>
             </View>
             <View style={{alignItems: 'center'}}>
-                <Pressable onPress={() => setModalTwoVisible(true)}><Image source={caiman} /></Pressable>
+                <Pressable onPress={() => setModalTwoVisible(true)}><Image style={{height: 350, marginTop: 70}}source={caiman} /></Pressable>
                 <Text style={styles.smallText}>Caiman</Text>
             </View>
             <View style={styles.modalView}>
@@ -58,22 +58,22 @@ export const SkullShape = () => {
                     visible={modalTwoVisible}
                     onRequestClose={() => setModalTwoVisible(!modalTwoVisible)}
                 >
-                    <View style={{backgroundColor: '#404F24', alignItems: 'center', justifyContent:'center', height: 200, width: 400, marginTop: 250, marginLeft: 630}}>
+                    <View style={{backgroundColor: '#404F24', alignItems: 'center', justifyContent:'center', height: 200, width: 400, marginTop: 460, marginLeft: 680}}>
                     <Pressable onPress={() => setModalTwoVisible(!modalTwoVisible)}>
                         <AntDesign style={{marginRight: 270, marginBottom: 10, marginTop: -30}} name="closecircle" size={30} color="white" />
                     </Pressable>
-                        <Text style={{color: 'white', padding: 10, fontSize: 18, textAlign: 'center'}}>The Caiman's skull is short and wide. This allows it to have a very strong bite, and eat a diet composed of <Text style={{fontStyle: 'italic'}}>birds, mammals, and turtles.</Text></Text>
+                        <Text style={{color: 'white', padding: 10, fontSize: 18, textAlign: 'center'}}>The Caiman's eyes are positioned so it can hunt on the edges of the water, allowing it to catch <Text style={{fontStyle: 'italic'}}>birds, mammals, and turtles.</Text></Text>
                     </View>
                 </Modal>
             </View>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 5}}>
             <View style={styles.arrowContainer}><Pressable onPress={goBack}>
                 <AntDesign style={styles.arrow}name="caretleft" size={70} color="black" />
                 </Pressable>
             </View>
             <View style={styles.arrowContainer}>
-                <Pressable onPress={() => navigation.navigate('Orbit')}>
+                <Pressable onPress={() => navigation.navigate('Dentition')}>
                 <AntDesign style={styles.arrow}name="caretright" size={70} color="black" />
                 </Pressable>
             </View>
@@ -108,14 +108,14 @@ const styles = StyleSheet.create({
         alignItems: 'center', 
         marginLeft: 40, 
         marginRight: 40, 
-        marginTop: 20,
+        marginTop: 70,
     },
     gharialView: {
         alignItems: 'center', 
-        marginTop: 20,
+        marginTop: 70,
     },
     gharialImage: {
-        height: 460,
+        height: 360,
     },
     modalOneView: {
         justifyContent: 'center', 
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
         color: '#4F330B',
     },
     image: {
-        height: 450, 
+        height: 350, 
         width: 250,
     },
     arrowContainer: {
@@ -151,5 +151,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontFamily: 'Overlock',
         color: '#4F330B',
+        marginTop: 30
     },
 })

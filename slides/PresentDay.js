@@ -21,7 +21,7 @@ export const PresentDay = () => {
             <Text style={styles.heading}>Present-day animals</Text>
         </View>
         <View style={{flexDirection: 'row', width: '100%', flex: 1}}>
-            <View style={{width: '45%', marginRight: 50}}>
+            <View style={{width: '45%', marginLeft: 40, marginRight: 50}}>
                 <Text style={styles.subHeading}>Gharial</Text>
                 <View style={{flexDirection: 'row', width: '100%'}}>
                     <Image source={skull} style={styles.skull}/>
