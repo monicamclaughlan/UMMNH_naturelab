@@ -3,6 +3,7 @@ import {View, Text, Image, Pressable, StyleSheet} from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
 import { assertStatusValuesInBounds } from 'expo-av/build/AV';
+import WebView from 'react-native-webview';
 
 const skull = require('../images/skull_bullet.png')
 const crocodile = require('../images/snake.jpg')
@@ -20,34 +21,39 @@ export const PresentDay = () => {
             <Text style={styles.heading}>Present-day animals</Text>
         </View>
         <View style={{flexDirection: 'row', width: '100%', flex: 1}}>
-            <View style={{width: '50%', flex: 1}}>
+            <View style={{width: '45%', marginRight: 50}}>
                 <Text style={styles.subHeading}>Gharial</Text>
                 <View style={{flexDirection: 'row', width: '100%'}}>
                     <Image source={skull} style={styles.skull}/>
                     <Text style={styles.text}>River dwellers in South Asia</Text>
                 </View>
-                <View style={{flexDirection: 'row', width: '100%'}}>
+                <View style={{flexDirection: 'row', width: '100%', marginBottom: 50}}>
                 <Image source={skull} style={styles.skull}/>
                 <Text style={styles.text}><Text style={styles.green}>Narrow snout</Text> and <Text style={styles.green}>super sharp teeth</Text> are important for their habitat and diet of <Text style={styles.green}>fish</Text></Text>
                 </View>
-                <View>
-                    <Image source={crocodile} />
-                    <Text>Caiman goes here</Text>
-                </View>
+                    <WebView
+                        scalesPageToFit={false}
+                        originWhitelist={['*']}
+                        source={{ html: '<iframe title="Tomistoma schlegelii" frameborder="0" width="470" height="260" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/cb9b397837d845bda2cfdbfe8ac945d2/embed"> </iframe>'}}  
+                    /> 
+                    <Text style={styles.smallText}>UMMZ Herps 174416</Text>
             </View>
-            <View style={{width: '50%'}}>
+            <View style={{width: '45%'}}>
                 <Text style={styles.subHeading}>Caiman</Text>
                 <View style={{flexDirection: 'row', width: '100%'}}>
                     <Image source={skull} style={styles.skull}/>
-                    <Text style={styles.text}>River dwellers in South Asia</Text>
+                    <Text style={styles.text}>River and lake dwellers in the Mexico, Central and South America</Text>
                 </View>
                 <View style={{flexDirection: 'row', width: '100%'}}>
                 <Image source={skull} style={styles.skull}/>
-                <Text style={styles.text}>Narrow snout and super sharp teeth are important for their habitat and diet of fish</Text>
+                <Text style={styles.text}>Eat a <Text style={styles.green}>varied diet</Text>, but their <Text style={styles.green}>wide jaw</Text> specializes them in crushing snail and turtle shells</Text>
                 </View>
-                <View>
-                    <Text>Caiman goes here</Text>
-                </View>
+                <WebView
+                        scalesPageToFit={false}
+                        originWhitelist={['*']}
+                        source={{ html: '<iframe title="Caiman crocodilus" frameborder="0" width="470" height="240" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a581c4aaaf2d4972a3495d60ec5ecb64/embed"> </iframe>'}}  
+                    /> 
+                    <Text style={styles.smallText}>UMMZ Herps 155282</Text>
             </View>
         </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -55,9 +61,11 @@ export const PresentDay = () => {
                 <AntDesign style={styles.arrow}name="caretleft" size={70} color="black" />
                 </Pressable>
             </View>
-            <Text style={styles.text}>Because these animals are alive today, we can observe their ecology!</Text>
+            <View>
+                <Text style={styles.mediumText}>Because these animals are alive today, we can observe their ecology!</Text>
+            </View>
             <View style={styles.arrowContainer}>
-                <Pressable onPress={() => navigation.navigate('HelpTwo')}>
+                <Pressable onPress={() => navigation.navigate('SkullShape')}>
                 <AntDesign style={styles.arrow}name="caretright" size={70} color="black" />
                 </Pressable>
             </View>
@@ -107,5 +115,17 @@ const styles = StyleSheet.create({
     arrow: {
         textAlign: 'center', 
         paddingTop: 20,
+    },
+    smallText: {
+        fontSize: 18,
+        fontFamily: 'Overlock',
+        color: '#4F330B',
+        textAlign: 'center',
+    },
+    mediumText: {
+        fontSize: 20,
+        fontFamily: 'Overlock',
+        color: '#4F330B',
+        paddingTop: 30,
     },
 })

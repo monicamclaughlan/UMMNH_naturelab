@@ -2,12 +2,12 @@ import React from 'react'
 import {View, Text, Image, Pressable, StyleSheet} from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
-import ThreeDTwo from './ThreeDTwo';
 
-const skull = require('../images/skull_bullet.png')
-const phytosaur = require('../images/3DPhytosaur.png')
+const phytosaur = require('../images/dorsalPhytosaur.png')
+const gharial = require('../images/dorsalGharial.png');
+const caiman = require('../images/dorsalCaiman.png');
 
-export const PhytosaurTwo = () => {
+export const SkullShape = () => {
     const navigation = useNavigation();
 
     const goBack = () => {
@@ -15,25 +15,24 @@ export const PhytosaurTwo = () => {
       };
 
     return (
-    
     <View style={styles.container}>
         <View>
-            <Text style={styles.heading}>Phytosaur</Text>
+            <Text style={styles.heading}>Gross Skull Shape Comparisons</Text>
+            <Text style={[styles.smallText, styles.subtitle]}>Click on the Gharial or Caiman to learn more!</Text>
         </View>
-        <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
-            <Image source={skull} style={styles.skull}/>
-            <Text style={styles.text}>Here is a fossil that we have identified as a <Text style={styles.green}>Phytosaur</Text>!</Text>
-        </View>
-        <View style={{width: 550, height: 250, alignSelf: 'center'}}>
-            <Image source={phytosaur} style={{height: 250, width: 450}} />
-        </View>
-        <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
-            <Image source={skull} style={styles.skull}/>
-            <Text style={styles.text}>Phytosaurs were <Text style={styles.green}>ancient reptiles</Text> from the Late Triassic.</Text>
-        </View>
-        <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
-            <Image source={skull} style={styles.skull}/>
-            <Text style={styles.text}>It looks a lot like a <Text style={styles.green}>crocodilian</Text>, right? Let's compare it to two present day animals and see if we can guess its <Text style={styles.green}>ecomorphology</Text>!</Text>
+        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+            <View style={{alignItems: 'center'}}>
+                <Image style={styles.image} source={phytosaur} />
+                <Text style={styles.smallText}>Phytosaur</Text>
+            </View>
+            <View style={{alignItems: 'center'}}>
+                <Image style={{height: 460}} source={gharial}/>
+                <Text style={styles.smallText}>Gharial</Text>
+            </View>
+            <View style={{alignItems: 'center'}}>
+                <Image source={caiman} />
+                <Text style={styles.smallText}>Caiaman</Text>
+            </View>
         </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <View style={styles.arrowContainer}><Pressable onPress={goBack}>
@@ -41,7 +40,7 @@ export const PhytosaurTwo = () => {
                 </Pressable>
             </View>
             <View style={styles.arrowContainer}>
-                <Pressable onPress={() => navigation.navigate('PresentDay')}>
+                <Pressable onPress={() => navigation.navigate('HelpTwo')}>
                 <AntDesign style={styles.arrow}name="caretright" size={70} color="black" />
                 </Pressable>
             </View>
@@ -60,8 +59,10 @@ const styles = StyleSheet.create({
         fontFamily: 'Overlock', 
         paddingTop: 50, 
         paddingLeft: 50, 
-        paddingBottom: 50, 
         color: '#4F330B',
+    },
+    subtitle: {
+        paddingLeft: 70,
     },
     green: { 
         color: '#404F24',
@@ -75,6 +76,10 @@ const styles = StyleSheet.create({
         fontFamily: 'Overlock',
         color: '#4F330B',
     },
+    image: {
+        height: 450, 
+        width: 250,
+    },
     arrowContainer: {
         width: 200, 
         height: 100, 
@@ -85,5 +90,10 @@ const styles = StyleSheet.create({
     arrow: {
         textAlign: 'center', 
         paddingTop: 20,
+    },
+    smallText: {
+        fontSize: 18,
+        fontFamily: 'Overlock',
+        color: '#4F330B',
     },
 })
