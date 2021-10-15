@@ -2,6 +2,7 @@ import React from 'react'
 import {View, Text, Image, Pressable, StyleSheet} from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
+import { TimerContext } from '../context/screensaver';
 
 const binocular = require('../images/Binocular.png')
 const skull = require('../images/skull_bullet.png')
@@ -10,6 +11,7 @@ const magnifier = require('../images/magnifier.png')
 const shovel = require('../images/shovel.png')
 
 export const Story = () => { 
+    const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation();
 
     const goBack = () => {
@@ -17,7 +19,9 @@ export const Story = () => {
       };
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container} onTouchStart={() => {
+            setCountdownTimer(300)
+          }} >
             <Text style={styles.heading}>Our story</Text>
             <View style={styles.firstParagraph}>
                 <Image source={skull} style={styles.skull}/>

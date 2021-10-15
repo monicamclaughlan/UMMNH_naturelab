@@ -10,6 +10,8 @@ import { PresentDay } from '../slides/PresentDay';
 import {SkullShape} from '../slides/SkullShape';
 import {Orbit} from '../slides/Orbit';
 import { Dentition } from '../slides/Dentition';
+import { Hypothesis } from '../slides/Hypothesis';
+import { Agree } from '../slides/Agree';
 
 const Stack = createStackNavigator()
 
@@ -33,6 +35,8 @@ const PhytosaurStack = () => {
             <Stack.Screen name={'SkullShape'} component={SkullShape} />
             <Stack.Screen name={'Orbit'} component={Orbit} />
             <Stack.Screen name={'Dentition'} component={Dentition} />
+            <Stack.Screen name={'Hypothesis'} component={Hypothesis} />
+            <Stack.Screen name={'Agree'} component={Agree} />
         </Stack.Navigator>
     )
 }

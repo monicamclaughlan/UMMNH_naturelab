@@ -2,11 +2,15 @@ import React from 'react'
 import {View, Text, Pressable, StyleSheet} from 'react-native'
 import {AntDesign} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
+import { TimerContext } from '../context/screensaver';
 
 export const Phytosaur = () => { 
+    const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
     return (
-    <View style={styles.container}>
+    <View style={styles.container} onTouchStart={() => {
+        setCountdownTimer(300)
+      }} >
         <View style={styles.colorColumn}>
             <View style={styles.green}></View>
             <View style={styles.brown}></View>

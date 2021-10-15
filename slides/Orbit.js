@@ -2,12 +2,14 @@ import React, {useState} from 'react'
 import {View, Text, Image, Pressable, StyleSheet, Modal} from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
+import { TimerContext } from '../context/screensaver';
 
 const phytosaur = require('../images/orbitPhytosaur.png')
 const gharial = require('../images/orbitGharial.png');
 const caiman = require('../images/orbitCaiman.png');
 
 export const Orbit = () => {
+    const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const [modalOneVisible, setModalOneVisible] = useState(false);
     const [modalTwoVisible, setModalTwoVisible] = useState(false);
 
@@ -18,7 +20,9 @@ export const Orbit = () => {
       };
 
     return (
-    <View style={styles.container}>
+    <View style={styles.container} onTouchStart={() => {
+        setCountdownTimer(300)
+      }}>
         <View>
             <Text style={styles.heading}>Orbit Comparisons</Text>
             <Text style={[styles.smallText, styles.subtitle]}>Click on the Gharial or Caiman to learn more!</Text>

@@ -2,12 +2,14 @@ import React, {useState} from 'react'
 import {View, Text, Image, Pressable, StyleSheet, Modal} from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
+import { TimerContext } from '../context/screensaver';
 
 const phytosaur = require('../images/dentitionPhytosaur.png')
 const gharial = require('../images/dentitionGharial.png');
 const caiman = require('../images/dentitionCaiman.png');
 
 export const Dentition = () => {
+    const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const [modalOneVisible, setModalOneVisible] = useState(false);
     const [modalTwoVisible, setModalTwoVisible] = useState(false);
 
@@ -18,7 +20,9 @@ export const Dentition = () => {
       };
 
     return (
-    <View style={styles.container}>
+    <View style={styles.container} onTouchStart={() => {
+        setCountdownTimer(300)
+      }}>
         <View>
             <Text style={styles.heading}>Dentition Comparisons</Text>
             <Text style={[styles.smallText, styles.subtitle]}>Click on the Gharial or Caiman to learn more!</Text>
@@ -73,7 +77,7 @@ export const Dentition = () => {
                 </Pressable>
             </View>
             <View style={styles.arrowContainer}>
-                <Pressable onPress={() => navigation.navigate('HelpTwo')}>
+                <Pressable onPress={() => navigation.navigate('Hypothesis')}>
                 <AntDesign style={styles.arrow}name="caretright" size={70} color="black" />
                 </Pressable>
             </View>

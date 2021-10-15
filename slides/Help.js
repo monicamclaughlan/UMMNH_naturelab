@@ -2,10 +2,12 @@ import React from 'react'
 import {View, Text, Image, Pressable, StyleSheet} from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
+import { TimerContext } from '../context/screensaver';
 
 const skull = require('../images/skull_bullet.png')
 
 export const Help = () => {
+    const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation();
 
     const goBack = () => {
@@ -13,7 +15,9 @@ export const Help = () => {
       };
 
     return (
-    <View style={styles.container}>
+    <View style={styles.container} onTouchStart={() => {
+        setCountdownTimer(300)
+      }} >
         <View>
             <Text style={styles.heading}>We need <Text style={styles.green}>you</Text> to help us!</Text>
         </View>

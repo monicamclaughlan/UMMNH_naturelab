@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React, {useState, useEffect} from 'react';
 import { Button, Dimensions, StyleSheet, Text, View, Image, TouchableOpacity, Pressable} from 'react-native';
 import AppLoading from 'expo-app-loading';
@@ -8,7 +8,7 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { Video } from 'expo-av';
 import { TimerContext } from './context/screensaver';
-import {DEVICE_HEIGHT, DEVICE_WIDTH} from './assets/utils';
+import {DEVICE_WIDTH} from './assets/utils';
 import PhytosaurStack from './navigation/PhytosaurStack';
 
 const crocodile = require('./images/crocodile.jpg')
@@ -182,21 +182,6 @@ const CrocodileScreen = () => {
    
 </>
 )}
-
-{/* <View>
-<Pressable style={styles.button} onPress={() => navigation.navigate('Phytosaur')}>
-    <Text style={styles.text}>Phytosaur 3D Skull</Text>
-  </Pressable>
-</View> */}
-
-// const Phytosaur = () => ( 
-//   <WebView
-//     scalesPageToFit={false}
-//     originWhitelist={['*']}
-//     useWebKit={true}
-//     source={{ html: '<iframe src="https://onedrive.live.com/embed?cid=299B17EEA40A8444&resid=299B17EEA40A8444%21281&authkey=AMrkRoVFtaGzRPs" width="960" height="450" frameborder="0" scrolling="no"></iframe>'}}
-//   />
-// )
 
 const SnakeScreen = () => (
   <WebView

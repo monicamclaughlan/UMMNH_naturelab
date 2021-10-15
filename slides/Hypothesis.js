@@ -5,9 +5,8 @@ import { useNavigation } from '@react-navigation/core';
 import { TimerContext } from '../context/screensaver';
 
 const skull = require('../images/skull_bullet.png')
-const phytosaur = require('../images/3DPhytosaur.png')
 
-export const PhytosaurTwo = () => {
+export const Hypothesis = () => {
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation();
 
@@ -16,27 +15,28 @@ export const PhytosaurTwo = () => {
       };
 
     return (
-    
     <View style={styles.container} onTouchStart={() => {
         setCountdownTimer(300)
       }}>
         <View>
-            <Text style={styles.heading}>Phytosaur</Text>
+            <Text style={styles.heading}>Time to formulate your own hypothesis!</Text>
+            <Text style={styles.subtitle}>Use the following questions to make your hypothesis about the Phytosaur's ecomorphology</Text>
         </View>
         <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
             <Image source={skull} style={styles.skull}/>
-            <Text style={styles.text}>Here is a fossil that we have identified as a <Text style={styles.green}>Phytosaur</Text>!</Text>
-        </View>
-        <View style={{width: 550, height: 250, alignSelf: 'center'}}>
-            <Image source={phytosaur} style={{height: 250, width: 450}} />
+            <Text style={styles.text}>Which <Text style={styles.green}>modern species</Text> does the <Text style={styles.green}>Phytosaur</Text> resemble?</Text>
         </View>
         <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
             <Image source={skull} style={styles.skull}/>
-            <Text style={styles.text}>Phytosaurs were <Text style={styles.green}>ancient reptiles</Text> from the Late Triassic.</Text>
+            <Text style={styles.text}>What kind of <Text style={styles.green}>habitat</Text> did it have?</Text>
         </View>
         <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
             <Image source={skull} style={styles.skull}/>
-            <Text style={styles.text}>It looks a lot like a <Text style={styles.green}>crocodilian</Text>, right? Let's compare it to two present day animals and see if we can guess its <Text style={styles.green}>ecomorphology</Text>!</Text>
+            <Text style={styles.text}>What did it <Text style={styles.green}>eat</Text>?</Text>
+        </View>
+        <View style={{flexDirection: 'row', width: '80%', flex: 1}}>
+            <Image source={skull} style={styles.skull}/>
+            <Text style={styles.text}>What part of the <Text style={styles.green}>anatomy</Text> did you use to make your hypothesis?</Text>
         </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <View style={styles.arrowContainer}><Pressable onPress={goBack}>
@@ -44,7 +44,7 @@ export const PhytosaurTwo = () => {
                 </Pressable>
             </View>
             <View style={styles.arrowContainer}>
-                <Pressable onPress={() => navigation.navigate('PresentDay')}>
+                <Pressable onPress={() => navigation.navigate('Agree')}>
                 <AntDesign style={styles.arrow}name="caretright" size={70} color="black" />
                 </Pressable>
             </View>
@@ -62,6 +62,13 @@ const styles = StyleSheet.create({
         fontSize: 44, 
         fontFamily: 'Overlock', 
         paddingTop: 50, 
+        paddingLeft: 50, 
+        paddingBottom: 10, 
+        color: '#4F330B',
+    },
+    subtitle: {
+        fontSize: 20,
+        fontFamily: 'Overlock',  
         paddingLeft: 50, 
         paddingBottom: 50, 
         color: '#4F330B',
