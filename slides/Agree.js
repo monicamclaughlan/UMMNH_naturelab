@@ -51,7 +51,7 @@ export const Agree = () => {
                 </Pressable>
             </View>
             <View style={styles.arrowContainer}>
-                <Pressable onPress={() => navigation.navigate('HelpTwo')}>
+                <Pressable onPress={() => navigation.navigate('Phytosaur')}>
                 <AntDesign style={styles.arrow}name="caretright" size={70} color="black" />
                 </Pressable>
             </View>

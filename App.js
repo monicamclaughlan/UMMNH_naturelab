@@ -12,8 +12,8 @@ import {DEVICE_WIDTH} from './assets/utils';
 import PhytosaurStack from './navigation/PhytosaurStack';
 
 const crocodile = require('./images/crocodile.jpg')
-const snake = require('./images/snake.jpg')
-const turtle = require('./images/turtle.jpg')
+const snake = require('./images/DSC_9204.png')
+const turtle = require('./images/DSC_0079.png')
 
 // async function changeScreenOrientation() {  
 // await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT);
@@ -30,35 +30,47 @@ const WelcomeScreen = () => {
     setCountdownTimer(300)
   }
   }>
-    <View style={[styles.textContainer, {marginTop:20, paddingTop: 20}]}>
-      <Text style={styles.basetext}>Welcome to the interactive nature lab! </Text>
-     
-      {/* <Button title="Hear from Researchers" color='black' onPress={() => navigation.navigate('Videos')}></Button> */}
-      <Pressable style={[styles.button, {width: 400, height: 50}]} onPress={() => navigation.navigate('Videos')}>
-      <Text style={styles.text}>Hear more from Researchers at the Lab</Text>
-      </Pressable>
-      <Text style={[styles.subtitle, {paddingTop: 30}]}>Click on the images below to learn more about each animal</Text>
+    <View style={[styles.textContainer, {marginTop:10, paddingTop: 20}]}>
+      <Text style={styles.basetext}>Project: MORPH! </Text> 
     </View>
-    {/* <StatusBar style="auto" /> */}
-  
-    <View style={styles.images}>
-   
-      <TouchableOpacity onPress={() => navigation.navigate('Phytosaur')}>
-        <Image style={{width:150, height: 150, margin: 5, borderRadius: 10 }} source={ crocodile }></Image>
-        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Phytosaur</Text>
+    <View style={{backgroundColor: '#B4D88B', width: '90%', borderRadius: 10, marginTop: 20}}>
+      <Text style={{textAlign: 'center', fontSize: 24, fontFamily: 'Eurostile', paddingTop: 20, paddingBottom: 15 }}>Click On A Video Below To Hear More</Text>
+      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+      <TouchableOpacity  onPress={() => navigation.navigate('InterviewOne')}>
+        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100,  shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ crocodile }></Image>
+        <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20}}>Interview One</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('InterviewTwo')}>
+        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
+        <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20}}>Interview Two</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('InterviewThree')}>
+        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>
+        <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20}}>Interview Three</Text>
+      </TouchableOpacity>
+      </View>
+    </View>
+  
+    <View style={{backgroundColor: '#B4D88B', width: '90%', borderRadius: 10, marginTop: 20}}>
+      <Text style={{textAlign: 'center', fontSize: 24, fontFamily: 'Eurostile', paddingTop: 20, paddingBottom: 15}}>Click On The Images Below To Learn More About Each Project</Text>
+      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+      {/* <TouchableOpacity onPress={() => navigation.navigate('Phytosaur')}>
+        <Image style={{width:150, height: 150, margin: 5, borderRadius: 100 }} source={ crocodile }></Image>
+        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 30}}>Phytosaur</Text>
+      </TouchableOpacity> */}
       <TouchableOpacity onPress={() => navigation.navigate('PhytosaurStack')}>
-        <Image style={{width:150, height: 150, margin: 5, borderRadius: 10 }} source={ crocodile }></Image>
-        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Phytosaur</Text>
+        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ crocodile }></Image>
+        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do we know what extinct reptiles ate?</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Snake')}>
-        <Image style={{width:150, height: 150, margin: 5, borderRadius: 10}} source={ snake }></Image>
-        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Snake Fangs</Text>
+        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
+        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do snake fangs work?</Text>
       </TouchableOpacity>  
       <TouchableOpacity onPress={() => navigation.navigate('Turtle')}>
-        <Image style={{width:150, height: 150, margin: 5, borderRadius: 10}} source={turtle}></Image>
-        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'white', fontSize: 30}}>Turtles</Text>
+        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>
+        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, marginBottom: 20}}>What do Michigan turtles look like inside their shells?</Text>
       </TouchableOpacity>
+      </View>
     </View>  
 </View>
 )}
@@ -187,7 +199,7 @@ const SnakeScreen = () => (
   <WebView
   scalesPageToFit={false}
   originWhitelist={['*']}
-  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSRDsWJJwV3olvZ-XDfk0WdBW0d0NI0Y6MYI1v0f_GWQWQ5LvkVZ4vDNoZBcdiS_A/embed?start=true&loop=true&delayms=60000" frameborder="0" width="960" height="660" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}
+  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSRDsWJJwV3olvZ-XDfk0WdBW0d0NI0Y6MYI1v0f_GWQWQ5LvkVZ4vDNoZBcdiS_A/embed?start=true&loop=true&delayms=60000" frameborder="0" width="1200" height="820" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}
   />
 )
 
@@ -196,7 +208,7 @@ const TurtleScreen = () => (
   style={{}}
   scalesPageToFit={false}
   originWhitelist={['*']}
-  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=60000" frameborder="0" width="1000" height="680" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
+  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=60000" frameborder="0" width="1200" height="820" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
    />
 )
 
@@ -295,7 +307,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center', 
   },
   textContainer: { 
-    flex: 1,
+    // flex: 1,
     alignItems: 'center',
     backgroundColor: '#4F6F18',
     marginTop: 40,
@@ -306,7 +318,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: 'white', 
     marginBottom: 20, 
-    padding: 10, 
+    // padding: 10, 
     fontFamily: 'Eurostile', 
     textAlign: 'center',
   }, 
@@ -359,7 +371,7 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'white',
+    color: 'black',
   },
   screensaver: { 
     position: "absolute", 
