@@ -10,6 +10,7 @@ import { Video } from 'expo-av';
 import { TimerContext } from './context/screensaver';
 import {DEVICE_WIDTH} from './assets/utils';
 import PhytosaurStack from './navigation/PhytosaurStack';
+import SnakeStack from './navigation/SnakeStack';
 
 const crocodile = require('./images/crocodile.jpg')
 const snake = require('./images/DSC_9204.png')
@@ -287,6 +288,7 @@ export default App => {
             <Stack.Screen name="Phytosaur" component={CrocodileScreen}/>
             <Stack.Screen name="PhytosaurStack" component={PhytosaurStack}/>
             {/* <Stack.Screen name="Phytosaur"  component={Phytosaur}/> */}
+            <Stack.Screen name="SnakeStack" component={SnakeStack} />
             <Stack.Screen name="Snake" component={SnakeScreen}/>
             <Stack.Screen name="Turtle" component={TurtleScreen}/>
             <Stack.Screen name="InterviewOne" component={InterviewOne}/>
