@@ -17,6 +17,11 @@ export const SnakeHome = () => {
     const goToAcknowledgements = () => {
         navigation.navigate('Acknowledgements')
     }
+
+    const goToSoleno = () => {
+        navigation.navigate('SoleOne')
+    }
+
     return (
     <View style={styles.container} onTouchStart={() => {
         setCountdownTimer(300)
@@ -43,7 +48,7 @@ export const SnakeHome = () => {
                 </Modal>
             </View>
         <View style={styles.imageView}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goToSoleno}>
                 <Image style={styles.image} source={ rattlesnake } />
                 <Text style={styles.imageText}>Solenoglyphous</Text>
                 <Text style={styles.underText}>Rattlesnake</Text>

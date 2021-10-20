@@ -1,14 +1,12 @@
 import React from 'react'
-import {View, Text, Pressable, StyleSheet} from 'react-native'
+import {View, Text, Pressable, StyleSheet, Image} from 'react-native'
 import {AntDesign} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
 import {TimerContext} from '../context/screensaver';
 
-const rattlesnake = require('../images/rattlesnake.jpg');
-const kingcobra = require('../images/king_cobra.jpg')
-const grass = require('../images/grass_snake.jpg')
+const fangs = require('../images/hollow_fangs.jpg');
 
-export const Acknowledgements = () => { 
+export const SoleOne = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
 
@@ -20,19 +18,25 @@ export const Acknowledgements = () => {
         setCountdownTimer(300)
       }} >
         <View style={styles.background}>
-                <Text style={styles.titleText}>Acknowledgements</Text> 
+                <Text style={styles.titleText}>Solenoglyphous Morph</Text> 
         </View>
         <View style={styles.imageView}>
-            <Text style={styles.thankText}>We'd like to thank Dr. Matthew Holding for mentoring us on this project, and Dr. Alison Davis-Rabosky and Hayley Crowell for providing us this opportunity as part of the MORPH project assignment for the EEB 450: Amphibians and Reptiles class.  We'd also like to thank the University of Michigan Natural History Museum for allowing us to present this project as part of a real exhibit.</Text>
+            <Text style={styles.thankText}>Fangs that are long, hollow, and can <Text style={styles.underline}>fold against the roof of the mouth</Text> when the jaw is closed are called <Text style={styles.bold}>solenoglyphous</Text></Text>
+            <Image style={styles.image}source={fangs} />
+            <Text style={styles.imageText}>Russell's viper</Text>
         </View>
         <View style={styles.authorView}>
-            <View style={styles.backView}>
+            {/* <View style={styles.backView}>
                 <AntDesign name="caretleft" size={30} color="black" />
                 <Text style={styles.backText}>Go Back</Text>
-            </View>
+            </View> */}
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
+            <View style={styles.backView}>
+                <Text style={styles.backText}>Next Page</Text>
+                <AntDesign name="caretright" size={30} color="black" />   
+            </View>
         </View>
     </View>  
     )
@@ -59,14 +63,35 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     thankText: {
-        fontSize: 30, 
+        fontSize: 44, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666'
     },
+    underline: {
+        color: 'blue', 
+        textDecorationLine: 'underline'
+    },
+    bold: {
+        fontWeight: 'bold'
+    },
+    image: {
+        width: 350, 
+        height: 250, 
+        alignSelf: 'center', 
+        position: 'relative'
+    },
+    imageText: {
+        fontStyle: 'italic', 
+        color: 'white', 
+        position: 'absolute', 
+        top: 390, 
+        right: 370
+    },
     authorView: {
         flexDirection: 'row', 
         flex: 1, 
+        justifyContent: 'space-between',
         alignItems: 'flex-end', 
         marginBottom: 30, 
         marginLeft: 20, 
@@ -84,7 +109,7 @@ const styles = StyleSheet.create({
     },
     homeView: {
         backgroundColor: '#C9DAF8', 
-        marginLeft: 330, 
+        marginLeft: 415, 
         padding: 15, 
         borderWidth: 1,
     },
