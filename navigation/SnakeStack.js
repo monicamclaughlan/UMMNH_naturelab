@@ -7,6 +7,7 @@ import {SoleOne} from '../snake_slides/SoleOne';
 import {SoleThree} from '../snake_slides/SoleThree';
 import {SoleTwo} from '../snake_slides/SoleTwo';
 import { SoleFour } from '../snake_slides/SoleFour';
+import { SoleFive } from '../snake_slides/SoleFive';
 
 const Stack = createStackNavigator()
 
@@ -26,6 +27,7 @@ const SnakeStack = () => {
             <Stack.Screen name='SoleThree' component={SoleThree} />
             <Stack.Screen name='SoleTwo' component={SoleTwo} />
             <Stack.Screen name='SoleFour' component={SoleFour} />
+            <Stack.Screen name='SoleFive' component={SoleFive} />
         </Stack.Navigator>
     )
 }

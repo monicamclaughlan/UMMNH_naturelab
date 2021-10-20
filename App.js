@@ -37,15 +37,15 @@ const WelcomeScreen = () => {
     <View style={{backgroundColor: '#B4D88B', width: '90%', borderRadius: 10, marginTop: 20}}>
       <Text style={{textAlign: 'center', fontSize: 24, fontFamily: 'Eurostile', paddingTop: 20, paddingBottom: 15 }}>Click On A Video Below To Hear More</Text>
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-      <TouchableOpacity  onPress={() => navigation.navigate('InterviewOne')}>
-        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100,  shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ crocodile }></Image>
+      <TouchableOpacity  style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('InterviewOne')}>
+        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100}} source={ crocodile }></Image>
         <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20}}>Interview One</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('InterviewTwo')}>
+      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('InterviewTwo')}>
         <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
         <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20}}>Interview Two</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('InterviewThree')}>
+      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('InterviewThree')}>
         <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>
         <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20}}>Interview Three</Text>
       </TouchableOpacity>
@@ -59,19 +59,19 @@ const WelcomeScreen = () => {
         <Image style={{width:150, height: 150, margin: 5, borderRadius: 100 }} source={ crocodile }></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 30}}>Phytosaur</Text>
       </TouchableOpacity> */}
-      <TouchableOpacity onPress={() => navigation.navigate('PhytosaurStack')}>
+      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('PhytosaurStack')}>
         <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ crocodile }></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do we know what extinct reptiles ate?</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Snake')}>
+      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Snake')}>
         <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do snake fangs work?</Text>
       </TouchableOpacity> 
-      <TouchableOpacity onPress={() => navigation.navigate('SnakeStack')}>
+      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('SnakeStack')}>
         <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do snake fangs work?</Text>
       </TouchableOpacity>  
-      <TouchableOpacity onPress={() => navigation.navigate('Turtle')}>
+      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Turtle')}>
         <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, marginBottom: 20}}>What do Michigan turtles look like inside their shells?</Text>
       </TouchableOpacity>

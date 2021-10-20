@@ -5,9 +5,9 @@ import {useNavigation} from '@react-navigation/native'
 import {TimerContext} from '../context/screensaver';
 import { DEVICE_WIDTH } from '../assets/utils';
 
-const venom = require('../images/venom.jpg');
+const venom = require('../images/white_lipped.jpg');
 
-export const SoleFour = () => { 
+export const SoleFive = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
 
@@ -15,13 +15,11 @@ export const SoleFour = () => {
         navigation.navigate('SnakeHome')
     }
 
-    const goToSoleThree = () => {
-        navigation.navigate('SoleThree')
+    const goToSoleFour = () => {
+        navigation.navigate('SoleFour')
     }
 
-    const goToSoleFive = () => {
-        navigation.navigate('SoleFive')
-    }
+    
 
     return (
     <View style={styles.container} onTouchStart={() => {
@@ -31,16 +29,16 @@ export const SoleFour = () => {
                 <Text style={styles.titleText}>Solenoglyphous: Venom Delivery</Text> 
         </View>
         <View style={styles.imageView}>
-            <View style={{width: '70%'}}>
-                <Text style={styles.thankText}>Solenoglyphous fangs allow for quick venom injection without a struggle and having to restrain the victim for long periods of time. </Text>
+            <View style={{width: '60%'}}>
+                <Text style={styles.thankText}>Just like a needle, these fangs go easily through the skin, injects the venom, and are quickly removed. After injections, snakes with track the prey down afterwards, allowing the venom to take effect. </Text>
             </View>
-            <View style={{width: '35%'}}>
+            <View style={{width: '50%'}}>
                 <Image style={styles.image}source={venom} />
-                <Text style={{textAlign: 'right', fontStyle: 'italic'}}>Copperhead</Text>
+                <Text style={{textAlign: 'right', fontStyle: 'italic'}}>White-lipped Pit Viper</Text>
             </View>
         </View>
         <View style={styles.authorView}>
-            <Pressable onPress={goToSoleThree}>
+            <Pressable onPress={goToSoleFour}>
                 <View style={styles.backView}>
                     <AntDesign name="caretleft" size={30} color="black" />
                     <Text style={styles.backText}>Go Back</Text>
@@ -49,12 +47,10 @@ export const SoleFour = () => {
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
-            <Pressable onPress={goToSoleFive}>
-                <View style={styles.backView}>
-                    <Text style={styles.backText}>Next Page</Text>
-                    <AntDesign name="caretright" size={30} color="black" />   
-                </View>
-            </Pressable>
+            <View style={styles.backView}>
+                <Text style={styles.backText}>Next Page</Text>
+                <AntDesign name="caretright" size={30} color="black" />   
+            </View>
         </View>
     </View>  
     )
@@ -69,6 +65,8 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
+        marginTop: 60,
+        marginBottom: 30,
     }, 
     titleText: {
         fontSize: 44,
@@ -78,7 +76,7 @@ const styles = StyleSheet.create({
         color: '#F95724',
     }, 
     imageView: {
-        flex: 1,
+        // flex: 1,
         marginTop: -40,
         flexDirection: 'row',
         width: DEVICE_WIDTH * 0.9,
@@ -97,10 +95,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     image: {
-        width: 400, 
+        width: 500, 
         height: 350, 
         alignSelf: 'center', 
-        position: 'relative'
+        position: 'relative', 
     },
     imageText: {
         fontStyle: 'italic', 
