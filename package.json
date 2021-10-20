@@ -24,7 +24,8 @@
     "react-native-screens": "~3.4.0",
     "react-native-web": "~0.13.12",
     "react-native-webview": "11.6.2",
-    "three": "^0.133.0"
+    "three": "^0.133.0",
+    "expo-linear-gradient": "~9.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
