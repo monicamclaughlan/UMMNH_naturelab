@@ -1,6 +1,7 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 import { useFonts } from 'expo-font';
+import {SnakeHome} from '../snake_slides/SnakeHome';
 
 const Stack = createStackNavigator()
 
@@ -14,7 +15,7 @@ const SnakeStack = () => {
 
       return (
         <Stack.Navigator screenOptions={{headerShown: false}}>
-       
+            <Stack.Screen name='SnakeHome' component={SnakeHome} />
         </Stack.Navigator>
     )
 }

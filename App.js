@@ -66,6 +66,10 @@ const WelcomeScreen = () => {
       <TouchableOpacity onPress={() => navigation.navigate('Snake')}>
         <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do snake fangs work?</Text>
+      </TouchableOpacity> 
+      <TouchableOpacity onPress={() => navigation.navigate('SnakeStack')}>
+        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
+        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do snake fangs work?</Text>
       </TouchableOpacity>  
       <TouchableOpacity onPress={() => navigation.navigate('Turtle')}>
         <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>
