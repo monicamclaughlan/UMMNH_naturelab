@@ -41,7 +41,7 @@ export const SnakeHome = () => {
                 >
                     <View style={styles.modalView}>
                     <Pressable onPress={() => setModalOneVisible(!modalOneVisible)}>
-                        <AntDesign style={styles.closeIcon} name="closecircle" size={30} color="red" />
+                        <AntDesign style={styles.closeIcon} name="closecircle" size={25} color="red" />
                     </Pressable>
                         <Text style={styles.modalText}>In biology, the term morph is often used to describe that a particular trait may have different forms</Text>
                     </View>

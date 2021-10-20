@@ -3,11 +3,11 @@ import {View, Text, Pressable, StyleSheet, Image} from 'react-native'
 import {AntDesign} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
 import {TimerContext} from '../context/screensaver';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { DEVICE_WIDTH } from '../assets/utils';
 
-const fangs = require('../images/hollow_fangs.jpg');
+const venom = require('../images/venom.jpg');
 
-export const SoleOne = () => { 
+export const SoleFour = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
 
@@ -15,42 +15,39 @@ export const SoleOne = () => {
         navigation.navigate('SnakeHome')
     }
 
-    const goToSoleTwo = () => {
-        navigation.navigate('SoleTwo')
-    }
-
-    const goToSoleThree = () => { 
+    const goToSoleThree = () => {
         navigation.navigate('SoleThree')
     }
+
     return (
     <View style={styles.container} onTouchStart={() => {
         setCountdownTimer(300)
       }} >
         <View style={styles.background}>
-                <Text style={styles.titleText}>Solenoglyphous Morph</Text> 
+                <Text style={styles.titleText}>Solenoglyphous: Venom Delivery</Text> 
         </View>
         <View style={styles.imageView}>
-            <Text style={styles.thankText}>Fangs that are long, hollow, and can <TouchableOpacity onPress={goToSoleThree}>
-                <Text style={styles.underline}>fold against the roof </Text>
-                </TouchableOpacity> 
-                of the mouth when the jaw is closed are called <Text style={styles.bold}>solenoglyphous.</Text></Text>
-            <Image style={styles.image}source={fangs} />
-            <Text style={styles.imageText}>Russell's viper</Text>
+            <View style={{width: '70%'}}>
+                <Text style={styles.thankText}>Solenoglyphous fangs allow for quick venom injection without a struggle and having to restrain the victim for long periods of time. </Text>
+            </View>
+            <View style={{width: '35%'}}>
+                <Image style={styles.image}source={venom} />
+            </View>
         </View>
         <View style={styles.authorView}>
-            {/* <View style={styles.backView}>
-                <AntDesign name="caretleft" size={30} color="black" />
-                <Text style={styles.backText}>Go Back</Text>
-            </View> */}
+            <Pressable onPress={goToSoleThree}>
+                <View style={styles.backView}>
+                    <AntDesign name="caretleft" size={30} color="black" />
+                    <Text style={styles.backText}>Go Back</Text>
+                </View>
+            </Pressable>
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
-            <Pressable onPress={goToSoleTwo}>
-                <View style={styles.backView}>
-                    <Text style={styles.backText}>Next Page</Text>
-                    <AntDesign name="caretright" size={30} color="black" />   
-                </View>
-            </Pressable>
+            <View style={styles.backView}>
+                <Text style={styles.backText}>Next Page</Text>
+                <AntDesign name="caretright" size={30} color="black" />   
+            </View>
         </View>
     </View>  
     )
@@ -65,37 +62,36 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        // marginTop: -40,
     }, 
     titleText: {
         fontSize: 44,
         textAlign: 'left',
         fontFamily: 'Arial',
-        paddingLeft: 20,
+        padding: 20,
         color: '#F95724',
     }, 
     imageView: {
         flex: 1,
         marginTop: -40,
+        flexDirection: 'row',
+        width: DEVICE_WIDTH * 0.9,
     },
     thankText: {
-        fontSize: 40, 
+        fontSize: 44, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
-        marginBottom: 30,
     },
     underline: {
         color: 'blue', 
-        textDecorationLine: 'underline', 
-        fontSize: 40,
+        textDecorationLine: 'underline'
     },
     bold: {
         fontWeight: 'bold'
     },
     image: {
-        width: 350, 
-        height: 250, 
+        width: 400, 
+        height: 350, 
         alignSelf: 'center', 
         position: 'relative'
     },
@@ -103,7 +99,7 @@ const styles = StyleSheet.create({
         fontStyle: 'italic', 
         color: 'white', 
         position: 'absolute', 
-        top: 410, 
+        top: 390, 
         right: 370
     },
     authorView: {
@@ -127,7 +123,7 @@ const styles = StyleSheet.create({
     },
     homeView: {
         backgroundColor: '#C9DAF8', 
-        marginLeft: 415, 
+        // marginLeft: 415, 
         padding: 15, 
         borderWidth: 1,
     },

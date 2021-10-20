@@ -3,11 +3,10 @@ import {View, Text, Pressable, StyleSheet, Image} from 'react-native'
 import {AntDesign} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
 import {TimerContext} from '../context/screensaver';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const fangs = require('../images/hollow_fangs.jpg');
+const needle = require('../images/needle.jpg');
 
-export const SoleOne = () => { 
+export const SoleThree = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
 
@@ -19,33 +18,32 @@ export const SoleOne = () => {
         navigation.navigate('SoleTwo')
     }
 
-    const goToSoleThree = () => { 
-        navigation.navigate('SoleThree')
+    const goToSoleFour = () => {
+        navigation.navigate('SoleFour')
     }
+
     return (
     <View style={styles.container} onTouchStart={() => {
         setCountdownTimer(300)
       }} >
         <View style={styles.background}>
-                <Text style={styles.titleText}>Solenoglyphous Morph</Text> 
+                <Text style={styles.titleText}>Solenoglyphous: Venom Delivery</Text> 
         </View>
         <View style={styles.imageView}>
-            <Text style={styles.thankText}>Fangs that are long, hollow, and can <TouchableOpacity onPress={goToSoleThree}>
-                <Text style={styles.underline}>fold against the roof </Text>
-                </TouchableOpacity> 
-                of the mouth when the jaw is closed are called <Text style={styles.bold}>solenoglyphous.</Text></Text>
-            <Image style={styles.image}source={fangs} />
-            <Text style={styles.imageText}>Russell's viper</Text>
+            <Text style={styles.thankText}>Snakes with solenoglyphous fangs often transfer venom through quick strikes and inject the venom similar to a hypodermic needle.</Text>
+            <Image style={styles.image}source={needle} />
         </View>
         <View style={styles.authorView}>
-            {/* <View style={styles.backView}>
-                <AntDesign name="caretleft" size={30} color="black" />
-                <Text style={styles.backText}>Go Back</Text>
-            </View> */}
+            <Pressable onPress={goToSoleTwo}>
+                <View style={styles.backView}>
+                    <AntDesign name="caretleft" size={30} color="black" />
+                    <Text style={styles.backText}>Go Back</Text>
+                </View>
+            </Pressable>
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
-            <Pressable onPress={goToSoleTwo}>
+            <Pressable onPress={goToSoleFour}>
                 <View style={styles.backView}>
                     <Text style={styles.backText}>Next Page</Text>
                     <AntDesign name="caretright" size={30} color="black" />   
@@ -65,13 +63,12 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        // marginTop: -40,
     }, 
     titleText: {
         fontSize: 44,
         textAlign: 'left',
         fontFamily: 'Arial',
-        paddingLeft: 20,
+        padding: 20,
         color: '#F95724',
     }, 
     imageView: {
@@ -79,16 +76,14 @@ const styles = StyleSheet.create({
         marginTop: -40,
     },
     thankText: {
-        fontSize: 40, 
+        fontSize: 44, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
-        marginBottom: 30,
     },
     underline: {
         color: 'blue', 
-        textDecorationLine: 'underline', 
-        fontSize: 40,
+        textDecorationLine: 'underline'
     },
     bold: {
         fontWeight: 'bold'
@@ -103,7 +98,7 @@ const styles = StyleSheet.create({
         fontStyle: 'italic', 
         color: 'white', 
         position: 'absolute', 
-        top: 410, 
+        top: 390, 
         right: 370
     },
     authorView: {
@@ -127,7 +122,7 @@ const styles = StyleSheet.create({
     },
     homeView: {
         backgroundColor: '#C9DAF8', 
-        marginLeft: 415, 
+        // marginLeft: 415, 
         padding: 15, 
         borderWidth: 1,
     },
