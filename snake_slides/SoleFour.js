@@ -34,7 +34,7 @@ export const SoleFour = () => {
             <View style={{width: '70%'}}>
                 <Text style={styles.thankText}>Solenoglyphous fangs allow for quick venom injection without a struggle and having to restrain the victim for long periods of time. </Text>
             </View>
-            <View style={{width: '35%'}}>
+            <View style={{width: '30%'}}>
                 <Image style={styles.image}source={venom} />
                 <Text style={{textAlign: 'right', fontStyle: 'italic'}}>Copperhead</Text>
             </View>
@@ -100,7 +100,8 @@ const styles = StyleSheet.create({
         width: 400, 
         height: 350, 
         alignSelf: 'center', 
-        position: 'relative'
+        position: 'relative', 
+        marginLeft: 50
     },
     imageText: {
         fontStyle: 'italic', 

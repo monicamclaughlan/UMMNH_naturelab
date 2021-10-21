@@ -7,7 +7,7 @@ import { DEVICE_WIDTH } from '../assets/utils';
 
 const venom = require('../images/white_lipped.jpg');
 
-export const SoleFive = () => { 
+export const SoleSix = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
 
@@ -15,12 +15,8 @@ export const SoleFive = () => {
         navigation.navigate('SnakeHome')
     }
 
-    const goToSoleFour = () => {
-        navigation.navigate('SoleFour')
-    }
-
-    const goToSoleSix = () => {
-        navigation.navigate('SoleSix')
+    const goToSoleFive = () => {
+        navigation.navigate('SoleFive')
     }
 
     
@@ -33,16 +29,18 @@ export const SoleFive = () => {
                 <Text style={styles.titleText}>Solenoglyphous: Venom Delivery</Text> 
         </View>
         <View style={styles.imageView}>
-            <View style={{width: '60%'}}>
-                <Text style={styles.thankText}>Just like a needle, these fangs go easily through the skin, injects the venom, and are quickly removed. After injections, snakes with track the prey down afterwards, allowing the venom to take effect. </Text>
-            </View>
             <View style={{width: '50%'}}>
                 <Image style={styles.image}source={venom} />
                 <Text style={{textAlign: 'right', fontStyle: 'italic'}}>White-lipped Pit Viper</Text>
             </View>
+            <View style={{width: '60%'}}>
+                <Text style={styles.thankText}>Venom is stored in the venom glands that are located in the upper jaw.  If the fany itself is the needle, the venom glands are the barrels that contain the liquid! </Text>
+                <Text style={styles.thankText}>The venom glands of snakes with solenoglyphous fangs are often very well developed in comparison to the venom glands of snakes with other fang morphs. </Text>
+                <Text style={styles.thankText}>Muscles surrounding the venom glands push the venom towards the fang which is then injected.  These muscles act similarly to a plunger of a needle!</Text>
+            </View>
         </View>
         <View style={styles.authorView}>
-            <Pressable onPress={goToSoleFour}>
+            <Pressable onPress={goToSoleFive}>
                 <View style={styles.backView}>
                     <AntDesign name="caretleft" size={30} color="black" />
                     <Text style={styles.backText}>Go Back</Text>
@@ -51,12 +49,10 @@ export const SoleFive = () => {
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
-            <Pressable onPress={goToSoleSix}>
             <View style={styles.backView}>
                 <Text style={styles.backText}>Next Page</Text>
                 <AntDesign name="caretright" size={30} color="black" />   
             </View>
-            </Pressable>
         </View>
     </View>  
     )
@@ -88,7 +84,7 @@ const styles = StyleSheet.create({
         width: DEVICE_WIDTH * 0.9,
     },
     thankText: {
-        fontSize: 44, 
+        fontSize: 24, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
