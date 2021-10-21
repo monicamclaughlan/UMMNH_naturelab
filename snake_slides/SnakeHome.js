@@ -33,8 +33,9 @@ export const SnakeHome = () => {
         <View style={styles.background}>
                 <Text style={styles.titleText}>Click on one of the pictures below to learn more about a venomous fang 
                 <TouchableOpacity style={styles.morphView} onPress={() => setModalOneVisible(true)}>
-                    <Text style={styles.underline}>morph</Text>
-                </TouchableOpacity>!</Text> 
+                    <Text style={styles.underline}>morph</Text>      
+                </TouchableOpacity>
+                !</Text> 
         </View>
         <View>
                 <Modal
@@ -98,9 +99,9 @@ const styles = StyleSheet.create({
         textShadowRadius: 1,
     }, 
     morphView: {
-        alignItems: 'center', 
-        justifyContent: 'center',
-        marginBottom: -25,
+        // alignItems: 'center', 
+        // justifyContent: 'center',
+        marginBottom: -25, 
     },
     underline: {
         color: 'blue', 

@@ -14,6 +14,11 @@ import { SoleEight } from '../snake_slides/SoleEight';
 import { SoleNine } from '../snake_slides/SoleNine';
 import { ProtOne } from '../snake_slides/ProtOne';
 import { ProtTwo } from '../snake_slides/ProtTwo';
+import { ProtThree } from '../snake_slides/ProtThree';
+import { ProtFour } from '../snake_slides/ProtFour';
+import { ProtFive } from '../snake_slides/ProtFive';
+import { ProtSix } from '../snake_slides/ProtSix';
+import { ProtSeven } from '../snake_slides/ProtSeven';
 
 const Stack = createStackNavigator()
 
@@ -40,6 +45,11 @@ const SnakeStack = () => {
             <Stack.Screen name='SoleNine' component={SoleNine} />
             <Stack.Screen name='ProtOne' component={ProtOne} />
             <Stack.Screen name='ProtTwo' component={ProtTwo} />
+            <Stack.Screen name='ProtThree' component={ProtThree} />
+            <Stack.Screen name='ProtFour' component={ProtFour} />
+            <Stack.Screen name='ProtFive' component={ProtFive} />
+            <Stack.Screen name='ProtSix' component={ProtSix} />
+            <Stack.Screen name='ProtSeven' component={ProtSeven} />
         </Stack.Navigator>
     )
 }

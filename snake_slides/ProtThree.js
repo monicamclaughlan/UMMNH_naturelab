@@ -1,70 +1,46 @@
-import React, {useState} from 'react'
-import {View, Text, Pressable, StyleSheet, Image, Modal, TouchableOpacity} from 'react-native'
+import React from 'react'
+import {View, Text, Pressable, StyleSheet, Image} from 'react-native'
 import {AntDesign} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
 import {TimerContext} from '../context/screensaver';
 import { DEVICE_WIDTH } from '../assets/utils';
 
-const venom = require('../images/coral.jpg');
+const venom = require('../images/king_cobra1.jpg');
 
-export const ProtTwo = () => { 
+export const ProtThree = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
-    const [modalOneVisible, setModalOneVisible] = useState(false);
     const navigation = useNavigation()
 
     const goHome = () => {
         navigation.navigate('SnakeHome')
     }
 
-    const goToProtOne = () => {
-        navigation.navigate('ProtOne')
+    const goToProtTwo = () => {
+        navigation.navigate('ProtTwo')
     }
 
-    const goToProtThree = () => {
-        navigation.navigate('ProtThree')
+    const goToProtFour = () => { 
+        navigation.navigate('ProtFour')
     }
-
-    
 
     return (
     <View style={styles.container} onTouchStart={() => {
         setCountdownTimer(300)
       }} >
         <View style={styles.background}>
-                <Text style={styles.titleText}>Proteroglyphous Fang Morph</Text> 
+                <Text style={styles.titleText}>Proteroglyphous: Venom Delivery</Text> 
         </View>
         <View style={styles.imageView}>
-            <View style={{width: '60%'}}>
-                <Text style={styles.thankText}>Similar to solenoglyphous fangs, proteroglyphous fangs are also hollow.</Text>
-                <Text style={styles.thankText}>Due to the inability to fold the fangs, proteroglyphous fangs are significantly shorter than solenoglyphous fangs and are often less curved.</Text>
-                <Text style={styles.thankText}>The only snake 
-                <TouchableOpacity style={styles.morphView} onPress={() => setModalOneVisible(true)}>
-                <Text style={{color: 'blue', textDecorationLine: 'underline', fontSize: 28, paddingLeft: 5, marginBottom: 22}}>family </Text>
-                </TouchableOpacity>
-                to have proteroglyphous fangs are Elapids which include snakes such as cobras, mambas, and coral snakes.</Text>
-                <View>
-                <Modal
-                    animationType="slide"
-                    transparent={true}
-                    visible={modalOneVisible}
-                    onRequestClose={() => setModalOneVisible(!modalOneVisible)}
-                >
-                    <View style={styles.modalView}>
-                    <Pressable onPress={() => setModalOneVisible(!modalOneVisible)}>
-                        <AntDesign style={styles.closeIcon} name="closecircle" size={25} color="red" />
-                    </Pressable>
-                        <Text style={styles.modalText}>In biology, the term family is used to group organisms that possess similar characteristics and traits!</Text>
-                    </View>
-                </Modal>
-            </View>
-            </View>
             <View style={{width: '50%'}}>
                 <Image style={styles.image}source={venom} />
-                <Text style={{textAlign: 'right', fontStyle: 'italic'}}>Eastern coral snake</Text>
+                <Text style={{textAlign: 'left', fontStyle: 'italic', marginLeft: 10, marginTop: 20}}>King cobra</Text>
+            </View>
+            <View style={{width: '60%'}}>
+                <Text style={styles.thankText}>Like snakes with solenoglyphous fang morphs, venom is still stored in a gland that is located behind the upper jaw but the method for which venom is delivered to the prey differs. </Text>
             </View>
         </View>
         <View style={styles.authorView}>
-            <Pressable onPress={goToProtOne}>
+            <Pressable onPress={goToProtTwo}>
                 <View style={styles.backView}>
                     <AntDesign name="caretleft" size={30} color="black" />
                     <Text style={styles.backText}>Go Back</Text>
@@ -73,7 +49,7 @@ export const ProtTwo = () => {
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
-            <Pressable onPress={goToProtThree}>
+            <Pressable onPress={goToProtFour}>
             <View style={styles.backView}>
                 <Text style={styles.backText}>Next Page</Text>
                 <AntDesign name="caretright" size={30} color="black" />   
@@ -110,11 +86,11 @@ const styles = StyleSheet.create({
         width: DEVICE_WIDTH * 0.9,
     },
     thankText: {
-        fontSize: 28, 
+        fontSize: 30, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
-        marginBottom: 20,
+        marginBottom: 10
     },
     underline: {
         color: 'blue', 
@@ -128,6 +104,7 @@ const styles = StyleSheet.create({
         height: 350, 
         alignSelf: 'center', 
         position: 'relative', 
+        marginLeft: 20
     },
     imageText: {
         fontStyle: 'italic', 
@@ -163,30 +140,5 @@ const styles = StyleSheet.create({
     },
     homeText: {
         fontSize: 20
-    },
-    morphView: {
-        alignItems: 'center', 
-        justifyContent: 'center',
-        marginBottom: -25,
-    },
-    modalView: {
-        backgroundColor: '#ffffff', 
-        alignItems: 'center', 
-        justifyContent:'center', 
-        height: 120, 
-        width: 350, 
-        marginTop: 500, 
-        marginLeft: 300, 
-        borderWidth: 1
-    },
-    closeIcon: {
-        marginLeft: 270,  
-        marginTop: 20,
-    },
-    modalText: {
-        color: 'black', 
-        padding: 10, 
-        fontSize: 15, 
-        textAlign: 'center',
     },
 })
