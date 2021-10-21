@@ -5,9 +5,9 @@ import {useNavigation} from '@react-navigation/native'
 import {TimerContext} from '../context/screensaver';
 import { DEVICE_WIDTH } from '../assets/utils';
 
-const venom = require('../images/white_lipped.jpg');
+const venom = require('../images/fang_diagram.png');
 
-export const SoleFive = () => { 
+export const SoleEight = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
 
@@ -15,34 +15,32 @@ export const SoleFive = () => {
         navigation.navigate('SnakeHome')
     }
 
-    const goToSoleFour = () => {
-        navigation.navigate('SoleFour')
+    const goToSoleSeven = () => {
+        navigation.navigate('SoleSeven')
     }
 
-    const goToSoleSix = () => {
-        navigation.navigate('SoleSix')
+    const goToSoleNine = () => {
+        navigation.navigate('SoleNine')
     }
-
-    
 
     return (
     <View style={styles.container} onTouchStart={() => {
         setCountdownTimer(300)
       }} >
         <View style={styles.background}>
-                <Text style={styles.titleText}>Solenoglyphous: Venom Delivery</Text> 
+                <Text style={styles.titleText}>Solenoglyphous Fang Summary</Text> 
         </View>
         <View style={styles.imageView}>
-            <View style={{width: '60%'}}>
-                <Text style={styles.thankText}>Just like a needle, these fangs go easily through the skin, injects the venom, and are quickly removed. After injections, snakes will track the prey down afterwards, allowing the venom to take effect. </Text>
-            </View>
-            <View style={{width: '50%'}}>
-                <Image style={styles.image}source={venom} />
-                <Text style={{textAlign: 'right', fontStyle: 'italic'}}>White-lipped Pit Viper</Text>
+            <View>
+                <Text style={styles.thankText}>- Hollow, retractable fangs used to deliver venom</Text>
+                <Text style={styles.thankText}>- Venom is delivered in a similar method as hypodermic needles</Text>
+                <Text style={styles.thankText}>- Vipers are the only snakes to have solenoglyphous fangs</Text>
+                <Text style={styles.thankText}>- Snakes with solenoglyphous fangs often use hemotoxins</Text>
+                <Text style={styles.thankText}>- Snakes with this fang morph are often ambush predators, attacking prey with quick strikes, and then hunting it down afterwards once it has succumbed to the venom</Text>
             </View>
         </View>
         <View style={styles.authorView}>
-            <Pressable onPress={goToSoleFour}>
+            <Pressable onPress={goToSoleSeven}>
                 <View style={styles.backView}>
                     <AntDesign name="caretleft" size={30} color="black" />
                     <Text style={styles.backText}>Go Back</Text>
@@ -51,7 +49,7 @@ export const SoleFive = () => {
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
-            <Pressable onPress={goToSoleSix}>
+            <Pressable onPress={goToSoleNine}>
             <View style={styles.backView}>
                 <Text style={styles.backText}>Next Page</Text>
                 <AntDesign name="caretright" size={30} color="black" />   
@@ -85,13 +83,14 @@ const styles = StyleSheet.create({
         // flex: 1,
         marginTop: -40,
         flexDirection: 'row',
-        width: DEVICE_WIDTH * 0.9,
+        // width: DEVICE_WIDTH * 0.9,
     },
     thankText: {
-        fontSize: 44, 
+        fontSize: 30, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
+        marginBottom: 10
     },
     underline: {
         color: 'blue', 
@@ -105,6 +104,7 @@ const styles = StyleSheet.create({
         height: 350, 
         alignSelf: 'center', 
         position: 'relative', 
+        marginLeft: 20
     },
     imageText: {
         fontStyle: 'italic', 

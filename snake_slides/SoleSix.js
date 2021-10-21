@@ -5,7 +5,7 @@ import {useNavigation} from '@react-navigation/native'
 import {TimerContext} from '../context/screensaver';
 import { DEVICE_WIDTH } from '../assets/utils';
 
-const venom = require('../images/white_lipped.jpg');
+const venom = require('../images/fang_diagram.png');
 
 export const SoleSix = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
@@ -19,7 +19,9 @@ export const SoleSix = () => {
         navigation.navigate('SoleFive')
     }
 
-    
+    const goToSoleSeven = () => { 
+        navigation.navigate('SoleSeven')
+    }
 
     return (
     <View style={styles.container} onTouchStart={() => {
@@ -31,10 +33,13 @@ export const SoleSix = () => {
         <View style={styles.imageView}>
             <View style={{width: '50%'}}>
                 <Image style={styles.image}source={venom} />
-                <Text style={{textAlign: 'right', fontStyle: 'italic'}}>White-lipped Pit Viper</Text>
+                <Text style={{position: 'absolute', top: 25, left: 30, fontSize: 20}}>Venom gland</Text>
+                <Text style={{position: 'absolute', top: 130, left: 5, fontSize: 20}}>Muscle</Text>
+                <Text style={{position: 'absolute', top: 220, right: 30, fontSize: 20}}>Fang</Text>
+                <Text style={{textAlign: 'left', fontStyle: 'italic', marginLeft: 10, marginTop: 20}}>Gaboon Viper</Text>
             </View>
             <View style={{width: '60%'}}>
-                <Text style={styles.thankText}>Venom is stored in the venom glands that are located in the upper jaw.  If the fany itself is the needle, the venom glands are the barrels that contain the liquid! </Text>
+                <Text style={styles.thankText}>Venom is stored in the venom glands that are located in the upper jaw.  If the fang itself is the needle, the venom glands are the barrels that contain the liquid! </Text>
                 <Text style={styles.thankText}>The venom glands of snakes with solenoglyphous fangs are often very well developed in comparison to the venom glands of snakes with other fang morphs. </Text>
                 <Text style={styles.thankText}>Muscles surrounding the venom glands push the venom towards the fang which is then injected.  These muscles act similarly to a plunger of a needle!</Text>
             </View>
@@ -49,10 +54,12 @@ export const SoleSix = () => {
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
+            <Pressable onPress={goToSoleSeven}>
             <View style={styles.backView}>
                 <Text style={styles.backText}>Next Page</Text>
                 <AntDesign name="caretright" size={30} color="black" />   
             </View>
+            </Pressable>
         </View>
     </View>  
     )
@@ -88,6 +95,7 @@ const styles = StyleSheet.create({
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
+        marginBottom: 10
     },
     underline: {
         color: 'blue', 
@@ -101,6 +109,7 @@ const styles = StyleSheet.create({
         height: 350, 
         alignSelf: 'center', 
         position: 'relative', 
+        marginLeft: 20
     },
     imageText: {
         fontStyle: 'italic', 

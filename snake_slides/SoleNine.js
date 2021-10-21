@@ -3,11 +3,11 @@ import {View, Text, Pressable, StyleSheet, Image} from 'react-native'
 import {AntDesign} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
 import {TimerContext} from '../context/screensaver';
-import { DEVICE_WIDTH } from '../assets/utils';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../assets/utils';
 
-const venom = require('../images/white_lipped.jpg');
+const needle = require('../images/bushmaster.jpg');
 
-export const SoleFive = () => { 
+export const SoleNine = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
 
@@ -15,34 +15,26 @@ export const SoleFive = () => {
         navigation.navigate('SnakeHome')
     }
 
-    const goToSoleFour = () => {
-        navigation.navigate('SoleFour')
+    const goToSoleEight = () => {
+        navigation.navigate('SoleEight')
     }
 
-    const goToSoleSix = () => {
-        navigation.navigate('SoleSix')
-    }
-
-    
+   
 
     return (
     <View style={styles.container} onTouchStart={() => {
         setCountdownTimer(300)
       }} >
         <View style={styles.background}>
-                <Text style={styles.titleText}>Solenoglyphous: Venom Delivery</Text> 
+                <Text style={styles.titleText}>Solenoglyphous Model</Text> 
         </View>
         <View style={styles.imageView}>
-            <View style={{width: '60%'}}>
-                <Text style={styles.thankText}>Just like a needle, these fangs go easily through the skin, injects the venom, and are quickly removed. After injections, snakes will track the prey down afterwards, allowing the venom to take effect. </Text>
-            </View>
-            <View style={{width: '50%'}}>
-                <Image style={styles.image}source={venom} />
-                <Text style={{textAlign: 'right', fontStyle: 'italic'}}>White-lipped Pit Viper</Text>
-            </View>
+            <Text style={styles.thankText}>Look at the 3D-printed Bushmaster <Text style={{fontStyle: 'italic'}}>(Lachesis muta)</Text> fang in the display case; see if you can identify the features that make this fang different from the others (shape, size).</Text>
+            <Image style={styles.image}source={needle} />
+            <Text style={{fontStyle: 'italic', textAlign: 'center'}}>Bushmaster</Text>
         </View>
         <View style={styles.authorView}>
-            <Pressable onPress={goToSoleFour}>
+            <Pressable onPress={goToSoleEight}>
                 <View style={styles.backView}>
                     <AntDesign name="caretleft" size={30} color="black" />
                     <Text style={styles.backText}>Go Back</Text>
@@ -51,12 +43,6 @@ export const SoleFive = () => {
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
-            <Pressable onPress={goToSoleSix}>
-            <View style={styles.backView}>
-                <Text style={styles.backText}>Next Page</Text>
-                <AntDesign name="caretright" size={30} color="black" />   
-            </View>
-            </Pressable>
         </View>
     </View>  
     )
@@ -71,8 +57,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        marginTop: 60,
-        marginBottom: 30,
     }, 
     titleText: {
         fontSize: 44,
@@ -82,16 +66,15 @@ const styles = StyleSheet.create({
         color: '#F95724',
     }, 
     imageView: {
-        // flex: 1,
+        flex: 1,
         marginTop: -40,
-        flexDirection: 'row',
-        width: DEVICE_WIDTH * 0.9,
     },
     thankText: {
-        fontSize: 44, 
+        fontSize: 40, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
+        marginBottom: 20,
     },
     underline: {
         color: 'blue', 
@@ -101,8 +84,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     image: {
-        width: 500, 
-        height: 350, 
+        width: 350, 
+        height: 250, 
         alignSelf: 'center', 
         position: 'relative', 
     },
@@ -116,7 +99,7 @@ const styles = StyleSheet.create({
     authorView: {
         flexDirection: 'row', 
         flex: 1, 
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
         alignItems: 'flex-end', 
         marginBottom: 30, 
         marginLeft: 20, 
@@ -134,7 +117,7 @@ const styles = StyleSheet.create({
     },
     homeView: {
         backgroundColor: '#C9DAF8', 
-        // marginLeft: 415, 
+        marginLeft: 280, 
         padding: 15, 
         borderWidth: 1,
     },
