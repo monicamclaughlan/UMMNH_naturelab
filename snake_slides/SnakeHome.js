@@ -26,6 +26,10 @@ export const SnakeHome = () => {
         navigation.navigate('ProtOne')
     }
 
+    const goToOpOne = () => { 
+        navigation.navigate('OpisthoOne')
+    }
+    
     return (
     <View style={styles.container} onTouchStart={() => {
         setCountdownTimer(300)
@@ -63,7 +67,7 @@ export const SnakeHome = () => {
                 <Text style={styles.imageText}>Proteroglyphous</Text>
                 <Text style={styles.underText}>King cobra</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goToOpOne}>
                 <Image style={styles.image} source={grass} />
                 <Text style={styles.imageText}>Opisthoglyphous</Text>
                 <Text style={styles.underText}>Grass snake</Text>
