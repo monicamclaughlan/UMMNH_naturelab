@@ -5,9 +5,9 @@ import {useNavigation} from '@react-navigation/native'
 import {TimerContext} from '../context/screensaver';
 import { DEVICE_WIDTH } from '../assets/utils';
 
-const venom = require('../images/lyre.jpg');
+const venom = require('../images/boomslang.jpg');
 
-export const OpisthoThree = () => { 
+export const OpisthoSeven = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
 
@@ -15,12 +15,12 @@ export const OpisthoThree = () => {
         navigation.navigate('SnakeHome')
     }
 
-    const goToOpTwo = () => {
-        navigation.navigate('OpisthoTwo')
+    const goToOpEight = () => {
+        navigation.navigate('OpisthoEight')
     }
 
-    const goToOpFour = () => { 
-        navigation.navigate('OpisthoFour')
+    const goToOpSix = () => { 
+        navigation.navigate('OpisthoSix')
     }
 
     
@@ -30,19 +30,20 @@ export const OpisthoThree = () => {
         setCountdownTimer(300)
       }} >
         <View style={styles.background}>
-                <Text style={styles.titleText}>Opisthoglyphous: Venom Delivery</Text> 
+                <Text style={styles.titleText}>Opisthoglyphous: Be Careful!</Text> 
         </View>
         <View style={styles.imageView}>
             <View style={{width: '60%'}}>
-                <Text style={styles.thankText}>The venom structure of snakes with opisthoglyphous fangs are also very different than the venom structures from the other fang morphs.  Instead of having a highly-developed venom gland and complex surrounding structures, Colubrids have glands known as Duvernoy's glands that release toxic secretions. </Text>
+                <Text style={styles.thankText}>Although the venom in snakes with opisthoglyphous fangs is usually not as potent, that does not mean all colubrids are harmless to humans!</Text>
+                <Text style={styles.thankText}>There are several species that are known to be highly venomous with bites that can be extremely lethal!  The boomslang is notorious for being one of the most venomous snakes in the world, even though it is part of the Colubridae family and has opisthoglyphous fangs.</Text>
             </View>
             <View style={{width: '50%'}}>
                 <Image style={styles.image}source={venom} />
-                <Text style={{textAlign: 'right', fontStyle: 'italic'}}>Lyre snake</Text>
+                <Text style={{textAlign: 'right', fontStyle: 'italic'}}>Boomslang</Text>
             </View>
         </View>
         <View style={styles.authorView}>
-        <Pressable onPress={goToOpTwo}>
+        <Pressable onPress={goToOpSix}>
             <View style={styles.backView}>
                 <AntDesign name="caretleft" size={30} color="black" />  
                 <Text style={styles.backText}>Go Back</Text> 
@@ -51,7 +52,7 @@ export const OpisthoThree = () => {
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
-            <Pressable onPress={goToOpFour}>
+            <Pressable onPress={goToOpEight}>
             <View style={styles.backView}>
                 <Text style={styles.backText}>Next Page</Text>
                 <AntDesign name="caretright" size={30} color="black" />   
@@ -88,10 +89,11 @@ const styles = StyleSheet.create({
         width: DEVICE_WIDTH * 0.9,
     },
     thankText: {
-        fontSize: 32, 
+        fontSize: 28, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
+        marginBottom: 20,
     },
     underline: {
         color: 'blue', 

@@ -25,6 +25,9 @@ import { OpisthoThree } from '../snake_slides/OpisthoThree';
 import { OpisthoFour } from '../snake_slides/OpisthoFour';
 import { OpisthoFive } from '../snake_slides/OpisthoFive';
 import { OpisthoSix } from '../snake_slides/OpisthoSix';
+import { OpisthoSeven } from '../snake_slides/OpisthoSeven';
+import { OpisthoEight } from '../snake_slides/OpisthoEight';
+import { OpisthoNine } from '../snake_slides/OpisthoNine';
 
 const Stack = createStackNavigator()
 
@@ -62,6 +65,9 @@ const SnakeStack = () => {
             <Stack.Screen name='OpisthoFour' component={OpisthoFour} />
             <Stack.Screen name='OpisthoFive' component={OpisthoFive} />
             <Stack.Screen name='OpisthoSix' component={OpisthoSix} />
+            <Stack.Screen name='OpisthoSeven' component={OpisthoSeven} />
+            <Stack.Screen name='OpisthoEight' component={OpisthoEight} />
+            <Stack.Screen name='OpisthoNine' component={OpisthoNine} />
         </Stack.Navigator>
     )
 }

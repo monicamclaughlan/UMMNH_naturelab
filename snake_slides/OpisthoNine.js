@@ -3,11 +3,11 @@ import {View, Text, Pressable, StyleSheet, Image} from 'react-native'
 import {AntDesign} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
 import {TimerContext} from '../context/screensaver';
-import { DEVICE_WIDTH } from '../assets/utils';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../assets/utils';
 
-const venom = require('../images/lyre.jpg');
+const needle = require('../images/cat-eyed.jpg');
 
-export const OpisthoThree = () => { 
+export const OpisthoNine = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
 
@@ -15,48 +15,34 @@ export const OpisthoThree = () => {
         navigation.navigate('SnakeHome')
     }
 
-    const goToOpTwo = () => {
-        navigation.navigate('OpisthoTwo')
+    const goToOpEight = () => {
+        navigation.navigate('OpisthoEight')
     }
 
-    const goToOpFour = () => { 
-        navigation.navigate('OpisthoFour')
-    }
-
-    
+   
 
     return (
     <View style={styles.container} onTouchStart={() => {
         setCountdownTimer(300)
       }} >
         <View style={styles.background}>
-                <Text style={styles.titleText}>Opisthoglyphous: Venom Delivery</Text> 
+                <Text style={styles.titleText}>Opisthoglyphous Fang Model</Text> 
         </View>
         <View style={styles.imageView}>
-            <View style={{width: '60%'}}>
-                <Text style={styles.thankText}>The venom structure of snakes with opisthoglyphous fangs are also very different than the venom structures from the other fang morphs.  Instead of having a highly-developed venom gland and complex surrounding structures, Colubrids have glands known as Duvernoy's glands that release toxic secretions. </Text>
-            </View>
-            <View style={{width: '50%'}}>
-                <Image style={styles.image}source={venom} />
-                <Text style={{textAlign: 'right', fontStyle: 'italic'}}>Lyre snake</Text>
-            </View>
+            <Text style={styles.thankText}>The model presented here is a 3D printed fang from the species <Text style={{fontStyle: 'italic'}}>Leptodeira septentrionalis,</Text> or more commonly known as the northern cat-eyed snake.  How does this fang differ from the others? Can you see how the other fangs may have evolved from this particular fang structure? </Text>
+            <Image style={styles.image}source={needle} />
+            <Text style={{fontStyle: 'italic', textAlign: 'center'}}>Cat-eyed snake</Text>
         </View>
         <View style={styles.authorView}>
-        <Pressable onPress={goToOpTwo}>
-            <View style={styles.backView}>
-                <AntDesign name="caretleft" size={30} color="black" />  
-                <Text style={styles.backText}>Go Back</Text> 
-            </View>
+            <Pressable onPress={goToOpEight}>
+                <View style={styles.backView}>
+                    <AntDesign name="caretleft" size={30} color="black" />
+                    <Text style={styles.backText}>Go Back</Text>
+                </View>
             </Pressable>
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
-            <Pressable onPress={goToOpFour}>
-            <View style={styles.backView}>
-                <Text style={styles.backText}>Next Page</Text>
-                <AntDesign name="caretright" size={30} color="black" />   
-            </View>
-            </Pressable>
         </View>
     </View>  
     )
@@ -71,8 +57,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        marginTop: 60,
-        marginBottom: 30,
     }, 
     titleText: {
         fontSize: 44,
@@ -82,16 +66,15 @@ const styles = StyleSheet.create({
         color: '#F95724',
     }, 
     imageView: {
-        // flex: 1,
+        flex: 1,
         marginTop: -40,
-        flexDirection: 'row',
-        width: DEVICE_WIDTH * 0.9,
     },
     thankText: {
-        fontSize: 32, 
+        fontSize: 30, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
+        marginBottom: 20,
     },
     underline: {
         color: 'blue', 
@@ -101,8 +84,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     image: {
-        width: 500, 
-        height: 350, 
+        width: 350, 
+        height: 250, 
         alignSelf: 'center', 
         position: 'relative', 
     },
@@ -116,7 +99,7 @@ const styles = StyleSheet.create({
     authorView: {
         flexDirection: 'row', 
         flex: 1, 
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
         alignItems: 'flex-end', 
         marginBottom: 30, 
         marginLeft: 20, 
@@ -134,7 +117,7 @@ const styles = StyleSheet.create({
     },
     homeView: {
         backgroundColor: '#C9DAF8', 
-        // marginLeft: 415, 
+        marginLeft: 280, 
         padding: 15, 
         borderWidth: 1,
     },

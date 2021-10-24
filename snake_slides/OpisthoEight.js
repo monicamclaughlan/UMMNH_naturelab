@@ -5,9 +5,9 @@ import {useNavigation} from '@react-navigation/native'
 import {TimerContext} from '../context/screensaver';
 import { DEVICE_WIDTH } from '../assets/utils';
 
-const venom = require('../images/lyre.jpg');
+const venom = require('../images/fang_diagram.png');
 
-export const OpisthoThree = () => { 
+export const OpisthoEight = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
 
@@ -15,43 +15,42 @@ export const OpisthoThree = () => {
         navigation.navigate('SnakeHome')
     }
 
-    const goToOpTwo = () => {
-        navigation.navigate('OpisthoTwo')
+    const goToOpSeven = () => {
+        navigation.navigate('OpisthoSeven')
     }
 
-    const goToOpFour = () => { 
-        navigation.navigate('OpisthoFour')
+    const goToOpNine = () => {
+        navigation.navigate('OpisthoNine')
     }
-
-    
 
     return (
     <View style={styles.container} onTouchStart={() => {
         setCountdownTimer(300)
       }} >
         <View style={styles.background}>
-                <Text style={styles.titleText}>Opisthoglyphous: Venom Delivery</Text> 
+                <Text style={styles.titleText}>Opisthoglyphous Fang Summary</Text> 
         </View>
         <View style={styles.imageView}>
-            <View style={{width: '60%'}}>
-                <Text style={styles.thankText}>The venom structure of snakes with opisthoglyphous fangs are also very different than the venom structures from the other fang morphs.  Instead of having a highly-developed venom gland and complex surrounding structures, Colubrids have glands known as Duvernoy's glands that release toxic secretions. </Text>
-            </View>
-            <View style={{width: '50%'}}>
-                <Image style={styles.image}source={venom} />
-                <Text style={{textAlign: 'right', fontStyle: 'italic'}}>Lyre snake</Text>
+            <View>
+                <Text style={styles.thankText}>- Fangs are located in the rear of the upper jaw.</Text>
+                <Text style={styles.thankText}>- Fangs are grooved and often smaller than the other two types of fangs.</Text>
+                <Text style={styles.thankText}>- Colubrids are the only family of snakes that have opisthoglyphous fangs.</Text>
+                <Text style={styles.thankText}>- Instead of having a well-developed venom gland, colubrids have a Duvernoy's gland.</Text>
+                <Text style={styles.thankText}>- Colubrids have to chew in order to release toxic secretions into victims.</Text>
+                <Text style={styles.thankText}>- Though most colubrid venoms are harmless to humans, a few species are highly venomous.</Text>
             </View>
         </View>
         <View style={styles.authorView}>
-        <Pressable onPress={goToOpTwo}>
-            <View style={styles.backView}>
-                <AntDesign name="caretleft" size={30} color="black" />  
-                <Text style={styles.backText}>Go Back</Text> 
-            </View>
+            <Pressable onPress={goToOpSeven}>
+                <View style={styles.backView}>
+                    <AntDesign name="caretleft" size={30} color="black" />
+                    <Text style={styles.backText}>Go Back</Text>
+                </View>
             </Pressable>
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
-            <Pressable onPress={goToOpFour}>
+            <Pressable onPress={goToOpNine}>
             <View style={styles.backView}>
                 <Text style={styles.backText}>Next Page</Text>
                 <AntDesign name="caretright" size={30} color="black" />   
@@ -85,13 +84,14 @@ const styles = StyleSheet.create({
         // flex: 1,
         marginTop: -40,
         flexDirection: 'row',
-        width: DEVICE_WIDTH * 0.9,
+        // width: DEVICE_WIDTH * 0.9,
     },
     thankText: {
-        fontSize: 32, 
+        fontSize: 30, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
+        marginBottom: 10
     },
     underline: {
         color: 'blue', 
@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
         height: 350, 
         alignSelf: 'center', 
         position: 'relative', 
+        marginLeft: 20
     },
     imageText: {
         fontStyle: 'italic', 

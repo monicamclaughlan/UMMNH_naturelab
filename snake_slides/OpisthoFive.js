@@ -39,7 +39,6 @@ export const OpisthoFive = () => {
             </View>
             <View style={{width: '50%'}}>
                 <Image style={styles.image}source={venom} />
-                <AntDesign name="arrowleft" size={40} color={'black'} style={{position: 'absolute', top: 150, left: 330}}/>
                 <Text style={{textAlign: 'right', fontStyle: 'italic'}}>Vine snake</Text>
             </View>
         </View>
