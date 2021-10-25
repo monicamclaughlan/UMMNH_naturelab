@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     image: {
-        width: 500, 
+        width: 480, 
         height: 350, 
         alignSelf: 'center', 
         position: 'relative', 

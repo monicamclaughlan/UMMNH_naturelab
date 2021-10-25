@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
         marginTop: -70,
     },
     thankText: {
-        fontSize: 40, 
+        fontSize: 38, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666'
@@ -150,8 +150,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     image: {
-        width: 350, 
-        height: 220, 
+        width: 340, 
+        height: 210, 
         // alignSelf: 'center', 
         // position: 'relative'
     },

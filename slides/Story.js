@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     imageContainer: {
         flexDirection: 'row', 
         justifyContent: 'space-between', 
-        paddingTop: 120, 
+        paddingTop: 100, 
     },
     arrowContainer: {
         width: 200, 

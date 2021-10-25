@@ -31,7 +31,7 @@ export const SoleFour = () => {
                 <Text style={styles.titleText}>Solenoglyphous: Venom Delivery</Text> 
         </View>
         <View style={styles.imageView}>
-            <View style={{width: '70%'}}>
+            <View style={{width: '65%'}}>
                 <Text style={styles.thankText}>Solenoglyphous fangs allow for quick venom injection without a struggle and having to restrain the victim for long periods of time. </Text>
             </View>
             <View style={{width: '30%'}}>
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         color: '#F95724',
     }, 
     imageView: {
-        flex: 1,
+        // flex: 1,
         marginTop: -40,
         flexDirection: 'row',
         width: DEVICE_WIDTH * 0.9,
@@ -101,14 +101,14 @@ const styles = StyleSheet.create({
         height: 350, 
         alignSelf: 'center', 
         position: 'relative', 
-        marginLeft: 50
+        marginLeft: 70
     },
     imageText: {
         fontStyle: 'italic', 
         color: 'white', 
         position: 'absolute', 
         top: 390, 
-        right: 370
+        right: 330
     },
     authorView: {
         flexDirection: 'row', 

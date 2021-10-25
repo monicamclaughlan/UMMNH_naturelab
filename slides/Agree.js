@@ -23,7 +23,7 @@ export const Agree = () => {
             <Text style={styles.heading}>Do we agree?</Text>
         </View>
         <View style={{flexDirection: 'row'}}>
-            <View style={{width: '57%'}}>
+            <View style={{width: '54%'}}>
                 <View style={{flexDirection: 'row', width: '90%'}}>
                     <Image source={skull} style={styles.skull}/>
                     <Text style={styles.text}>This phytosaur has a <Text style={styles.green}>long, narrow snout</Text> and <Text style={styles.green}>pointy, uniform teeth</Text>- it looks much more like the <Text style={styles.green}>gharial</Text> than like the caiman!</Text>
@@ -45,13 +45,13 @@ export const Agree = () => {
                 <Image style={{width: 450}}source={tree} />
             </View>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 75}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 30}}>
             <View style={styles.arrowContainer}><Pressable onPress={goBack}>
                 <AntDesign style={styles.arrow}name="caretleft" size={70} color="black" />
                 </Pressable>
             </View>
             <View style={styles.arrowContainer}>
-                <Pressable onPress={() => navigation.navigate('Phytosaur')}>
+                <Pressable onPress={() => navigation.navigate('PhytosaurOne')}>
                 <AntDesign style={styles.arrow}name="caretright" size={70} color="black" />
                 </Pressable>
             </View>

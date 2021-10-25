@@ -11,20 +11,18 @@ import { TimerContext } from './context/screensaver';
 import {DEVICE_WIDTH} from './assets/utils';
 import PhytosaurStack from './navigation/PhytosaurStack';
 import SnakeStack from './navigation/SnakeStack';
+import { Asset } from 'expo-asset';
 
 const crocodile = require('./images/crocodile.jpg')
 const snake = require('./images/DSC_9204.png')
 const turtle = require('./images/DSC_0079.png')
-
-// async function changeScreenOrientation() {  
-// await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT);
-// }
-
-
-
+// const morph = require("./videos/morph.mp4")
+const morph = Asset.fromModule("./assets/videos/morph.mp4")
 
 const WelcomeScreen = () => { 
+
  const navigation = useNavigation()
+
   const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
   return (
   <View style={styles.container} onTouchStart={() => {
@@ -37,18 +35,24 @@ const WelcomeScreen = () => {
     <View style={{backgroundColor: '#B4D88B', width: '90%', borderRadius: 10, marginTop: 20}}>
       <Text style={{textAlign: 'center', fontSize: 24, fontFamily: 'Eurostile', paddingTop: 20, paddingBottom: 15 }}>Click On A Video Below To Hear More</Text>
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-      <TouchableOpacity  style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('InterviewOne')}>
-        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100}} source={ crocodile }></Image>
-        <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20}}>Interview One</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('InterviewTwo')}>
-        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
-        <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20}}>Interview Two</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('InterviewThree')}>
-        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>
-        <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20}}>Interview Three</Text>
-      </TouchableOpacity>
+        <View>
+          <TouchableOpacity  style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Herpetology')}>
+            <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center'}} source={ crocodile }></Image>
+          </TouchableOpacity>
+          <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 300}}>What is Herpetology?</Text>
+        </View>
+        <View>
+          <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Science Communication')}>
+            <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', alignSelf: 'center', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
+          </TouchableOpacity>
+          <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 300}}>Science Communication</Text>
+        </View>
+        <View>
+        <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Project MORPH!')}>
+          <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', alignSelf: 'center', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>
+        </TouchableOpacity>
+        <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 300}}>Project MORPH!</Text>
+      </View>
       </View>
     </View>
   
@@ -59,22 +63,28 @@ const WelcomeScreen = () => {
         <Image style={{width:150, height: 150, margin: 5, borderRadius: 100 }} source={ crocodile }></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 30}}>Phytosaur</Text>
       </TouchableOpacity> */}
-      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('PhytosaurStack')}>
-        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ crocodile }></Image>
-        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do we know what extinct reptiles ate?</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Snake')}>
+        <View>
+          <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Phytosaur')}>
+            <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ crocodile }></Image>
+          </TouchableOpacity>
+          <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do we know what extinct reptiles ate?</Text>
+        </View>
+      {/* <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Snake')}>
         <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
         <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do snake fangs work?</Text>
-      </TouchableOpacity> 
-      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('SnakeStack')}>
-        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
-        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do snake fangs work?</Text>
-      </TouchableOpacity>  
-      <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Turtle')}>
-        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>
-        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, marginBottom: 20}}>What do Michigan turtles look like inside their shells?</Text>
-      </TouchableOpacity>
+      </TouchableOpacity>  */}
+        <View>
+          <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Snake Fangs')}>
+            <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
+          </TouchableOpacity>  
+          <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20, marginTop: 20}}>How do snake fangs work?</Text>
+        </View>
+        <View>
+          <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Turtle Shells')}>
+            <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>  
+          </TouchableOpacity>
+          <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, marginBottom: 20}}>What do Michigan turtles look like inside their shells?</Text>
+        </View>
       </View>
     </View>  
 </View>
@@ -213,7 +223,7 @@ const TurtleScreen = () => (
   style={{}}
   scalesPageToFit={false}
   originWhitelist={['*']}
-  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=60000" frameborder="0" width="1200" height="820" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
+  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSodfDfxO2V3g8c7I2w6rjPp7bwrHPA1XT9DPH8D0d9fTOdQjjbGDK27qYf6nMfPw/embed?start=true&loop=true&delayms=60000" frameborder="0" width="1200" height="840" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }}
    />
 )
 
@@ -238,17 +248,19 @@ export default App => {
       <TouchableOpacity onPress={toggle}>
         <View>
           <Video
-              source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+              source={{
+                uri: 'https://ummnh.s3.us-east-2.amazonaws.com/morph_attract_FINAL.mp4',
+              }}
               shouldPlay
               isLooping
-              resizeMode="cover"
+              resizeMode="contain"
               style={{ width, height }}
             />
         </View>
       </TouchableOpacity>
   )}
 
-
+ 
   useEffect(() => {
     if(countdownTimer > 0){ 
       timer = setTimeout( () => {
@@ -286,18 +298,23 @@ export default App => {
                   clearTimeout(myTimer)
                 }
               }}
+              screenOptions={{
+                headerStyle: {
+                  height: 45, // Specify the height of your custom header
+                }
+              }}
           > 
             <Stack.Screen name="Welcome" component={WelcomeScreen}/>
             <Stack.Screen name="Videos"  component={Videos}/>
-            <Stack.Screen name="Phytosaur" component={CrocodileScreen}/>
-            <Stack.Screen name="PhytosaurStack" component={PhytosaurStack}/>
+            {/* <Stack.Screen name="Phytosaur" component={CrocodileScreen}/> */}
+            <Stack.Screen name="Phytosaur" component={PhytosaurStack}/>
             {/* <Stack.Screen name="Phytosaur"  component={Phytosaur}/> */}
-            <Stack.Screen name="SnakeStack" component={SnakeStack} />
-            <Stack.Screen name="Snake" component={SnakeScreen}/>
-            <Stack.Screen name="Turtle" component={TurtleScreen}/>
-            <Stack.Screen name="InterviewOne" component={InterviewOne}/>
-            <Stack.Screen name="InterviewTwo" component={InterviewTwo}/>
-            <Stack.Screen name="InterviewThree" component={InterviewThree}/>
+            <Stack.Screen name="Snake Fangs" component={SnakeStack} />
+            {/* <Stack.Screen name="Snake" component={SnakeScreen}/> */}
+            <Stack.Screen name="Turtle Shells" component={TurtleScreen}/>
+            <Stack.Screen name="Herpetology" component={InterviewOne}/>
+            <Stack.Screen name="Science Communication" component={InterviewTwo}/>
+            <Stack.Screen name="Project MORPH!" component={InterviewThree}/>
           </Stack.Navigator>
       </NavigationContainer>
     </TimerContext.Provider>

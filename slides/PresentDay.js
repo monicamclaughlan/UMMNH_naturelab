@@ -37,11 +37,11 @@ export const PresentDay = () => {
                     <WebView
                         scalesPageToFit={false}
                         originWhitelist={['*']}
-                        source={{ html: '<iframe title="Tomistoma schlegelii" frameborder="0" width="470" height="260" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/cb9b397837d845bda2cfdbfe8ac945d2/embed"> </iframe>'}}  
+                        source={{ html: '<iframe title="Tomistoma schlegelii" frameborder="0" width="450" height="235" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/cb9b397837d845bda2cfdbfe8ac945d2/embed"> </iframe>'}}  
                     /> 
                     <Text style={styles.smallText}>UMMZ Herps 174416</Text>
             </View>
-            <View style={{width: '45%'}}>
+            <View style={{width: '40%'}}>
                 <Text style={styles.subHeading}>Caiman</Text>
                 <View style={{flexDirection: 'row', width: '100%'}}>
                     <Image source={skull} style={styles.skull}/>
@@ -54,7 +54,7 @@ export const PresentDay = () => {
                 <WebView
                         scalesPageToFit={false}
                         originWhitelist={['*']}
-                        source={{ html: '<iframe title="Caiman crocodilus" frameborder="0" width="470" height="240" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a581c4aaaf2d4972a3495d60ec5ecb64/embed"> </iframe>'}}  
+                        source={{ html: '<iframe title="Caiman crocodilus" frameborder="0" width="400" height="260" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a581c4aaaf2d4972a3495d60ec5ecb64/embed"> </iframe>'}}  
                     /> 
                     <Text style={styles.smallText}>UMMZ Herps 155282</Text>
             </View>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Overlock', 
         paddingTop: 50, 
         paddingLeft: 50, 
-        paddingBottom: 50, 
+        paddingBottom: 20, 
         color: '#4F330B',
     },
     subHeading: {

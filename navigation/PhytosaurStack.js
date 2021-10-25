@@ -1,7 +1,7 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 import { useFonts } from 'expo-font';
-import { Phytosaur } from '../slides/Phytosaur';
+import { PhytosaurOne } from '../slides/Phytosaur';
 import { Story } from '../slides/Story';
 import {Help} from '../slides/Help';
 import {HelpTwo} from '../slides/HelpTwo';
@@ -26,7 +26,7 @@ const PhytosaurStack = () => {
 
     return (
         <Stack.Navigator screenOptions={{headerShown: false}}>
-            <Stack.Screen name={'Phytosaur'} component={Phytosaur}/>
+            <Stack.Screen name={'PhytosaurOne'} component={PhytosaurOne}/>
             <Stack.Screen name={'Story'} component={Story}/>
             <Stack.Screen name={'Help'} component={Help}/>
             <Stack.Screen name={'HelpTwo'} component={HelpTwo}/>

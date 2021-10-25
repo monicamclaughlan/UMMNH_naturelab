@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     image: {
-        width: 500, 
+        width: 480, 
         height: 350, 
         alignSelf: 'center', 
         position: 'relative', 
@@ -169,12 +169,12 @@ const styles = StyleSheet.create({
         justifyContent:'center', 
         height: 120, 
         width: 350, 
-        marginTop: 480, 
-        marginLeft: 300, 
+        marginTop: 450, 
+        marginLeft: 190, 
         borderWidth: 1
     },
     closeIcon: {
-        marginLeft: 270,  
+        marginLeft: 240,  
         marginTop: 20,
     },
     modalText: {

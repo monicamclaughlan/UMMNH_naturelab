@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         fontSize: 44,
         textAlign: 'left',
         fontFamily: 'Arial',
-        padding: 20,
+        padding: 10,
         color: '#F95724',
     }, 
     imageView: {
@@ -70,11 +70,11 @@ const styles = StyleSheet.create({
         marginTop: -40,
     },
     thankText: {
-        fontSize: 40, 
+        fontSize: 38, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
-        marginBottom: 20,
+        // marginBottom: 0,
     },
     underline: {
         color: 'blue', 
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         flex: 1, 
         // justifyContent: 'space-between',
         alignItems: 'flex-end', 
-        marginBottom: 30, 
+        marginBottom: 20, 
         marginLeft: 20, 
         marginRight: 20,
     },
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     },
     homeView: {
         backgroundColor: '#C9DAF8', 
-        marginLeft: 280, 
+        marginLeft: 250, 
         padding: 15, 
         borderWidth: 1,
     },

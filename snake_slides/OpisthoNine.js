@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     },
     homeView: {
         backgroundColor: '#C9DAF8', 
-        marginLeft: 280, 
+        marginLeft: 250, 
         padding: 15, 
         borderWidth: 1,
     },

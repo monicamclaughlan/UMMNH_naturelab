@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
-        marginBottom: 30,
+        marginBottom: 10,
     },
     underline: {
         color: 'blue', 
@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
         fontStyle: 'italic', 
         color: 'white', 
         position: 'absolute', 
-        top: 410, 
-        right: 370
+        top: 390, 
+        right: 360
     },
     authorView: {
         flexDirection: 'row', 
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     },
     homeView: {
         backgroundColor: '#C9DAF8', 
-        marginLeft: 415, 
+        marginLeft: 380, 
         padding: 15, 
         borderWidth: 1,
     },

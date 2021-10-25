@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
         fontSize: 44,
         textAlign: 'left',
         fontFamily: 'Arial',
-        padding: 20,
+        // padding: 20,
+        paddingLeft: 20,
         color: '#F95724',
     }, 
     imageView: {
@@ -74,7 +75,8 @@ const styles = StyleSheet.create({
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
-        marginBottom: 20,
+        // marginBottom: 20,
+        marginTop: -20,
     },
     underline: {
         color: 'blue', 
@@ -117,7 +119,7 @@ const styles = StyleSheet.create({
     },
     homeView: {
         backgroundColor: '#C9DAF8', 
-        marginLeft: 280, 
+        marginLeft: 240, 
         padding: 15, 
         borderWidth: 1,
     },

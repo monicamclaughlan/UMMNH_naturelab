@@ -35,7 +35,7 @@ export const SoleSix = () => {
                 <Image style={styles.image}source={venom} />
                 <Text style={{position: 'absolute', top: 25, left: 30, fontSize: 20}}>Venom gland</Text>
                 <Text style={{position: 'absolute', top: 130, left: 5, fontSize: 20}}>Muscle</Text>
-                <Text style={{position: 'absolute', top: 220, right: 30, fontSize: 20}}>Fang</Text>
+                <Text style={{position: 'absolute', top: 220, right: 10, fontSize: 20}}>Fang</Text>
                 <Text style={{textAlign: 'left', fontStyle: 'italic', marginLeft: 10, marginTop: 20}}>Gaboon Viper</Text>
             </View>
             <View style={{width: '60%'}}>
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
         width: DEVICE_WIDTH * 0.9,
     },
     thankText: {
-        fontSize: 24, 
+        fontSize: 28, 
         marginLeft: 30, 
         marginRight: 30, 
         color: '#666666', 
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         height: 350, 
         alignSelf: 'center', 
         position: 'relative', 
-        marginLeft: 20
+        marginLeft: 50
     },
     imageText: {
         fontStyle: 'italic', 

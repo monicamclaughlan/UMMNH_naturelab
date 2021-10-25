@@ -4,7 +4,7 @@ import {AntDesign} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
 import { TimerContext } from '../context/screensaver';
 
-export const Phytosaur = () => { 
+export const PhytosaurOne = () => { 
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
     return (
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#D57500', 
         alignSelf:'flex-end', 
         width: 200, 
-        height: 100,
+        height: 120,
         borderWidth: 1,
     },
 })

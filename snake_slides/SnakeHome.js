@@ -119,6 +119,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around', 
         flex: 1,
+        paddingTop: 40,
     },
     image: {
         width: 325, 
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
         height: 150, 
         width: 350, 
         marginTop: 200, 
-        marginLeft: 700, 
+        marginLeft: 640, 
         borderWidth: 1
     },
     closeIcon: {

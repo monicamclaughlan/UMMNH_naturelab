@@ -34,7 +34,7 @@ export const OpisthoOne = () => {
             </View>
             <View style={{width: '50%'}}>
                 <Image style={styles.image}source={venom} />
-                <AntDesign name="arrowleft" size={40} color={'black'} style={{position: 'absolute', top: 150, left: 330}}/>
+                <AntDesign name="arrowleft" size={50} color={'black'} style={{position: 'absolute', top: 150, left: 310}}/>
                 <Text style={{textAlign: 'right', fontStyle: 'italic'}}>Garter snake</Text>
             </View>
         </View>
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     image: {
-        width: 500, 
+        width: 480, 
         height: 350, 
         alignSelf: 'center', 
         position: 'relative', 

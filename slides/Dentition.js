@@ -62,7 +62,7 @@ export const Dentition = () => {
                     visible={modalTwoVisible}
                     onRequestClose={() => setModalTwoVisible(!modalTwoVisible)}
                 >
-                    <View style={{backgroundColor: '#404F24', alignItems: 'center', justifyContent:'center', height: 200, width: 400, marginTop: 460, marginLeft: 680}}>
+                    <View style={{backgroundColor: '#404F24', alignItems: 'center', justifyContent:'center', height: 200, width: 400, marginTop: 460, marginLeft: 620}}>
                     <Pressable onPress={() => setModalTwoVisible(!modalTwoVisible)}>
                         <AntDesign style={{marginRight: 270, marginBottom: 10, marginTop: -30}} name="closecircle" size={30} color="white" />
                     </Pressable>
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     },
     gharialImage: {
         height: 170,
+        width: 360,
     },
     modalOneView: {
         justifyContent: 'center', 
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
         color: '#4F330B',
     },
     image: {
-        height: 280, 
+        height: 260, 
         width: 280,
     },
     arrowContainer: {

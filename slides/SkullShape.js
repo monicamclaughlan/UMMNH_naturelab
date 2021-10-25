@@ -52,7 +52,7 @@ export const SkullShape = () => {
                 </Modal>
             </View>
             <View style={{alignItems: 'center'}}>
-                <Pressable onPress={() => setModalTwoVisible(true)}><Image source={caiman} /></Pressable>
+                <Pressable onPress={() => setModalTwoVisible(true)}><Image style={{height: 475}} source={caiman} /></Pressable>
                 <Text style={styles.smallText}>Caiman</Text>
             </View>
             <View style={styles.modalView}>
@@ -62,7 +62,7 @@ export const SkullShape = () => {
                     visible={modalTwoVisible}
                     onRequestClose={() => setModalTwoVisible(!modalTwoVisible)}
                 >
-                    <View style={{backgroundColor: '#404F24', alignItems: 'center', justifyContent:'center', height: 200, width: 400, marginTop: 250, marginLeft: 630}}>
+                    <View style={{backgroundColor: '#404F24', alignItems: 'center', justifyContent:'center', height: 200, width: 400, marginTop: 250, marginLeft: 620}}>
                     <Pressable onPress={() => setModalTwoVisible(!modalTwoVisible)}>
                         <AntDesign style={{marginRight: 270, marginBottom: 10, marginTop: -30}} name="closecircle" size={30} color="white" />
                     </Pressable>
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
         color: '#4F330B',
     },
     image: {
-        height: 450, 
+        height: 430, 
         width: 250,
     },
     arrowContainer: {
