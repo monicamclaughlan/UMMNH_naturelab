@@ -6,7 +6,7 @@ import WebView from 'react-native-webview';
 import { TimerContext } from '../context/screensaver';
 
 const skull = require('../images/skull_bullet.png')
-const crocodile = require('../images/snake.jpg')
+// const crocodile = require('../images/snake.jpg')
 
 export const PresentDay = () => {
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);

@@ -8,16 +8,15 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { Video } from 'expo-av';
 import { TimerContext } from './context/screensaver';
-import {DEVICE_WIDTH} from './assets/utils';
+import {DEVICE_HEIGHT, DEVICE_WIDTH} from './assets/utils';
 import PhytosaurStack from './navigation/PhytosaurStack';
 import SnakeStack from './navigation/SnakeStack';
-import { Asset } from 'expo-asset';
+import { AntDesign } from '@expo/vector-icons';
 
 const crocodile = require('./images/crocodile.jpg')
 const snake = require('./images/DSC_9204.png')
 const turtle = require('./images/DSC_0079.png')
-// const morph = require("./videos/morph.mp4")
-const morph = Asset.fromModule("./assets/videos/morph.mp4")
+
 
 const WelcomeScreen = () => { 
 
@@ -29,7 +28,7 @@ const WelcomeScreen = () => {
     setCountdownTimer(300)
   }
   }>
-    <View style={[styles.textContainer, {marginTop:10, paddingTop: 20}]}>
+    <View style={[styles.textContainer, {marginTop:40, paddingTop: 20}]}>
       <Text style={styles.basetext}>Project: MORPH! </Text> 
     </View>
     <View style={{backgroundColor: '#B4D88B', width: '90%', borderRadius: 10, marginTop: 20}}>
@@ -59,25 +58,18 @@ const WelcomeScreen = () => {
     <View style={{backgroundColor: '#B4D88B', width: '90%', borderRadius: 10, marginTop: 20}}>
       <Text style={{textAlign: 'center', fontSize: 24, fontFamily: 'Eurostile', paddingTop: 20, paddingBottom: 15}}>Click On The Images Below To Learn More About Each Project</Text>
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-      {/* <TouchableOpacity onPress={() => navigation.navigate('Phytosaur')}>
-        <Image style={{width:150, height: 150, margin: 5, borderRadius: 100 }} source={ crocodile }></Image>
-        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 30}}>Phytosaur</Text>
-      </TouchableOpacity> */}
         <View>
           <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Phytosaur')}>
             <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ crocodile }></Image>
           </TouchableOpacity>
-          <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do we know what extinct reptiles ate?</Text>
+          <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300}}>How do we know </Text>
+          <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>what extinct reptiles ate?</Text>
         </View>
-      {/* <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Snake')}>
-        <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
-        <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20}}>How do snake fangs work?</Text>
-      </TouchableOpacity>  */}
         <View>
           <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Snake Fangs')}>
-            <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
+            <Image style={{width:150, height: 150, marginTop: 42, marginBottom: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
           </TouchableOpacity>  
-          <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20, marginTop: 20}}>How do snake fangs work?</Text>
+          <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20, marginBottom: 45}}>How do snake fangs work?</Text>
         </View>
         <View>
           <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Turtle Shells')}>
@@ -90,133 +82,95 @@ const WelcomeScreen = () => {
 </View>
 )}
 
-
-
-const Videos = () => {
-  const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
-  const navigation = useNavigation()
-  return (
-    <View style={{flex:1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#4F6F18', marginLeft: 50, marginRight: 50}} onTouchStart={() => {
-      setCountdownTimer(300)
-    }
-    }>
-      <Text style={[styles.subtitle, {width: '90%'}]}>Hear more from the researchers themselves! </Text>
-      <Text style={[styles.subtitle, {width: '90%'}]}>Click each button below to hear a short interview about their work.</Text>
-      <Pressable style={styles.button} onPress={() => navigation.navigate('InterviewOne')}>
-        <Text style={styles.text}>Interview One</Text>
-      </Pressable>
-      <Pressable style={styles.button} onPress={() => navigation.navigate('InterviewTwo')}>
-        <Text style={styles.text}>Interview Two</Text>
-      </Pressable>
-      <Pressable style={styles.button} onPress={() => navigation.navigate('InterviewThree')}>
-        <Text style={styles.text}>Interview Three</Text>
-      </Pressable>
-    </View>
-  );
-}
-
 const InterviewOne = () => {
+  const navigation = useNavigation();
+  const {width} = Dimensions.get('window');
   const video = React.useRef(null);
   const [status, setStatus] = useState({});
-  return (
-  <View style={styles.container}>
-  <Video
-    ref={video}
-    style={styles.video}
-    source={{
-      uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
-    }}
-    useNativeControls
-    resizeMode="cover"
-    isLooping
-    onPlaybackStatusUpdate={status => setStatus(() => status)}
-  />
-  <View style={styles.buttons}>
-    <Button
-      title={status.isPlaying ? 'Pause' : 'Play'}
-      onPress={() =>
-        status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
-      }
-    />
-  </View>
-</View>
-  )}
 
-  const InterviewTwo = () => {
-    const video = React.useRef(null);
-    const [status, setStatus] = useState({});
-    return (
-    <View style={styles.container}>
+  return (
+  <View>
     <Video
       ref={video}
-      style={styles.video}
-      source={{
-        uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
-      }}
+      style={{ width, height: 730 }}
+      source={require('./assets/videos/morph.mp4')}
       useNativeControls
-      resizeMode="cover"
+      resizeMode="contain"
       isLooping
       onPlaybackStatusUpdate={status => setStatus(() => status)}
     />
     <View style={styles.buttons}>
-      <Button
-        title={status.isPlaying ? 'Pause' : 'Play'}
-        onPress={() =>
-          status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
-        }
-      />
+      <Pressable style={{backgroundColor: 'green', width: 100, height: 30, marginTop: 2, marginRight:20, borderRadius: 5, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() =>
+            status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
+          }>
+        <Text style={{color: 'white', textAlign: 'center', fontSize: 22}}>{status.isPlaying ? 'Pause' : 'Play'}</Text>
+      </Pressable>
+      <Pressable style={{backgroundColor: 'green', width: 100, height: 30, marginTop: 2, borderRadius: 5, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => 
+        navigation.navigate('Welcome')
+        }>
+        <Text style={{color: 'white', textAlign: 'center', fontSize: 22}}>Home</Text>
+      </Pressable>
+    </View>
+  </View>
+)}
+
+  const InterviewTwo = () => {
+    const navigation = useNavigation()
+    const {width} = Dimensions.get('window')
+    const video = React.useRef(null);
+    const [status, setStatus] = useState({});
+    return (
+    <View>
+    <Video
+      ref={video}
+      style={{ width, height: 730 }}
+      source={require('./assets/videos/morph.mp4')}
+      useNativeControls
+      resizeMode="contain"
+      isLooping
+      onPlaybackStatusUpdate={status => setStatus(() => status)}
+    />
+    <View style={styles.buttons}>
+      <Pressable style={{backgroundColor: 'green', width: 100, height: 30, marginTop: 2, marginRight:20, borderRadius: 5, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() =>
+            status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
+          }>
+        <Text style={{color: 'white', textAlign: 'center', fontSize: 22}}>{status.isPlaying ? 'Pause' : 'Play'}</Text>
+      </Pressable>
+      <Pressable style={{backgroundColor: 'green', width: 100, height: 30, marginTop: 2, borderRadius: 5, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Welcome')}>
+        <Text style={{color: 'white', textAlign: 'center', fontSize: 22}}>Home</Text>
+      </Pressable>
     </View>
   </View>
     )}
 
     const InterviewThree = () => {
+      const navigation = useNavigation()
+      const {width} = Dimensions.get('window')
       const video = React.useRef(null);
       const [status, setStatus] = useState({});
       return (
-      <View style={styles.container}>
+      <View>
       <Video
         ref={video}
-        style={styles.video}
-        source={{
-          uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
-        }}
+        style={{ width, height: 730 }}
+        source={require('./assets/videos/morph.mp4')}
         useNativeControls
-        resizeMode="cover"
+        resizeMode="contain"
         isLooping
         onPlaybackStatusUpdate={status => setStatus(() => status)}
       />
       <View style={styles.buttons}>
-        <Button
-          title={status.isPlaying ? 'Pause' : 'Play'}
-          onPress={() =>
+      <Pressable style={{backgroundColor: 'green', width: 100, height: 30, marginTop: 2, marginRight:20, borderRadius: 5, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() =>
             status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
-          }
-        />
+          }>
+        <Text style={{color: 'white', textAlign: 'center', fontSize: 22}}>{status.isPlaying ? 'Pause' : 'Play'}</Text>
+      </Pressable>
+      <Pressable style={{backgroundColor: 'green', width: 100, height: 30, marginTop: 2, borderRadius: 5, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Welcome')}>
+        <Text style={{color: 'white', textAlign: 'center', fontSize: 22}}>Home</Text>
+      </Pressable>
       </View>
     </View>
       )}    
-
-const CrocodileScreen = () => {
-  const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
-  const navigation = useNavigation();
-  return (
-  <>
-    <WebView
-      scalesPageToFit={false}
-      originWhitelist={['*']}
-      source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSgI3ONxGNjkSqJXWmvR7_z6Yds3-3hiN50L77DW5O5uNM1q4qPzc3VHopxkcTRGg/embed?start=true&loop=true&delayms=60000" frameborder="0" width="960" height="660" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}  
-    /> 
-   
-</>
-)}
-
-const SnakeScreen = () => (
-  <WebView
-  scalesPageToFit={false}
-  originWhitelist={['*']}
-  source={{ html: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSRDsWJJwV3olvZ-XDfk0WdBW0d0NI0Y6MYI1v0f_GWQWQ5LvkVZ4vDNoZBcdiS_A/embed?start=true&loop=true&delayms=60000" frameborder="0" width="1200" height="820" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'}}
-  />
-)
 
 const TurtleScreen = () => (
   <WebView
@@ -243,18 +197,16 @@ export default App => {
   }
 
   const playScreensaverVideo = () => {
-    const {width, height} = Dimensions.get('window')
+    const {width} = Dimensions.get('window')
     return (
       <TouchableOpacity onPress={toggle}>
         <View>
           <Video
-              source={{
-                uri: 'https://ummnh.s3.us-east-2.amazonaws.com/morph_attract_FINAL.mp4',
-              }}
+              source={require('./assets/videos/morph.mp4')}
               shouldPlay
               isLooping
               resizeMode="contain"
-              style={{ width, height }}
+              style={{ width, height: 800 }}
             />
         </View>
       </TouchableOpacity>
@@ -265,7 +217,6 @@ export default App => {
     if(countdownTimer > 0){ 
       timer = setTimeout( () => {
         setCountdownTimer(countdownTimer - 1);
-        // console.log(countdownTimer);
       }, 1000);
     }else {
       setActive(true);
@@ -300,21 +251,20 @@ export default App => {
               }}
               screenOptions={{
                 headerStyle: {
-                  height: 45, // Specify the height of your custom header
-                }
+                  height: 45,
+                  backgroundColor: 'transparent', 
+                },
+                headerBackTitleVisible: false,
+                headerBackImage: () => <AntDesign style={{marginLeft: 20}} name="caretleft" size={20} color={'black'}/>
               }}
           > 
-            <Stack.Screen name="Welcome" component={WelcomeScreen}/>
-            <Stack.Screen name="Videos"  component={Videos}/>
-            {/* <Stack.Screen name="Phytosaur" component={CrocodileScreen}/> */}
-            <Stack.Screen name="Phytosaur" component={PhytosaurStack}/>
-            {/* <Stack.Screen name="Phytosaur"  component={Phytosaur}/> */}
+            <Stack.Screen name="Welcome" component={WelcomeScreen} options={{header: () => null}}/>
+            <Stack.Screen name="Phytosaur" component={PhytosaurStack} />
             <Stack.Screen name="Snake Fangs" component={SnakeStack} />
-            {/* <Stack.Screen name="Snake" component={SnakeScreen}/> */}
             <Stack.Screen name="Turtle Shells" component={TurtleScreen}/>
-            <Stack.Screen name="Herpetology" component={InterviewOne}/>
-            <Stack.Screen name="Science Communication" component={InterviewTwo}/>
-            <Stack.Screen name="Project MORPH!" component={InterviewThree}/>
+            <Stack.Screen name="Herpetology" component={InterviewOne} options={{header: () => null}}/>
+            <Stack.Screen name="Science Communication" component={InterviewTwo} options={{header: () => null}}/>
+            <Stack.Screen name="Project MORPH!" component={InterviewThree} options={{header: () => null}}/>
           </Stack.Navigator>
       </NavigationContainer>
     </TimerContext.Provider>
@@ -370,8 +320,8 @@ const styles = StyleSheet.create({
   },
   video: {
     alignSelf: 'center',
-    width: 675,
-    height: 400,
+    width: DEVICE_WIDTH,
+    height: DEVICE_HEIGHT,
   },
   buttons: {
     flexDirection: 'row',
