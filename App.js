@@ -11,6 +11,7 @@ import { TimerContext } from './context/screensaver';
 import {DEVICE_HEIGHT, DEVICE_WIDTH} from './assets/utils';
 import PhytosaurStack from './navigation/PhytosaurStack';
 import SnakeStack from './navigation/SnakeStack';
+import TurtleStack from './navigation/TurtleStack';
 import { AntDesign } from '@expo/vector-icons';
 
 const crocodile = require('./images/crocodile.jpg')
@@ -72,7 +73,7 @@ const WelcomeScreen = () => {
           <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20, marginBottom: 45}}>How do snake fangs work?</Text>
         </View>
         <View>
-          <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Turtle Shells')}>
+          <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Turtle')}>
             <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>  
           </TouchableOpacity>
           <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, marginBottom: 20}}>What do Michigan turtles look like inside their shells?</Text>
@@ -262,6 +263,7 @@ export default App => {
             <Stack.Screen name="Phytosaur" component={PhytosaurStack} />
             <Stack.Screen name="Snake Fangs" component={SnakeStack} />
             <Stack.Screen name="Turtle Shells" component={TurtleScreen}/>
+            <Stack.Screen name="Turtle" component={TurtleStack} />
             <Stack.Screen name="Herpetology" component={InterviewOne} options={{header: () => null}}/>
             <Stack.Screen name="Science Communication" component={InterviewTwo} options={{header: () => null}}/>
             <Stack.Screen name="Project MORPH!" component={InterviewThree} options={{header: () => null}}/>
