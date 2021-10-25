@@ -101,7 +101,7 @@ const InterviewOne = () => {
       isLooping
       onPlaybackStatusUpdate={status => setStatus(() => status)}
     />
-    <View style={styles.buttons}>
+    <View style={[styles.buttons, {paddingBottom: 10}]}>
       <Pressable style={{backgroundColor: 'green', width: 100, height: 30, marginTop: 2, marginRight:20, borderRadius: 5, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() =>
             status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
           }>
@@ -128,11 +128,11 @@ const InterviewOne = () => {
       style={{ width, height: 730 }}
       source={require('./assets/videos/morph.mp4')}
       useNativeControls
-      resizeMode="cover"
+      resizeMode="contain"
       isLooping
       onPlaybackStatusUpdate={status => setStatus(() => status)}
     />
-    <View style={styles.buttons}>
+    <View style={[styles.buttons, {paddingBottom: 10}]}>
       <Pressable style={{backgroundColor: 'green', width: 100, height: 30, marginTop: 2, marginRight:20, borderRadius: 5, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() =>
             status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
           }>
@@ -157,11 +157,11 @@ const InterviewOne = () => {
         style={{ width, height: 730 }}
         source={require('./assets/videos/morph.mp4')}
         useNativeControls
-        resizeMode="cover"
+        resizeMode="contain"
         isLooping
         onPlaybackStatusUpdate={status => setStatus(() => status)}
       />
-      <View style={styles.buttons}>
+      <View style={[styles.buttons, {paddingBottom: 10}]}>
       <Pressable style={{backgroundColor: 'green', width: 100, height: 30, marginTop: 2, marginRight:20, borderRadius: 5, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() =>
             status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
           }>
@@ -331,6 +331,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'black',
   },
   button: {
     alignItems: 'center',
