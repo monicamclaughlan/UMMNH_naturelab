@@ -9,6 +9,7 @@ import { AntDesign } from '@expo/vector-icons';
 const turtle = require('../images/turtle_shell.jpg')
 
 export const TurtleHome = () => { 
+    const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation();
 
     const goBack = () => {
@@ -16,7 +17,9 @@ export const TurtleHome = () => {
       };
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container} onTouchStart={() => {
+            setCountdownTimer(300)
+          }}>
             <ImageBackground source={turtle} resizeMode='cover' style={styles.image}>
                 <View style={{backgroundColor: 'rgba(255, 255, 255, 0.5)', flex: 1}}>
                 <View>
