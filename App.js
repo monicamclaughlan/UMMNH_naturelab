@@ -14,6 +14,7 @@ import SnakeStack from './navigation/SnakeStack';
 import TurtleStack from './navigation/TurtleStack';
 import { AntDesign } from '@expo/vector-icons';
 
+
 const crocodile = require('./images/crocodile.jpg')
 const snake = require('./images/DSC_9204.png')
 const turtle = require('./images/DSC_0079.png')
@@ -127,7 +128,7 @@ const InterviewOne = () => {
       style={{ width, height: 730 }}
       source={require('./assets/videos/morph.mp4')}
       useNativeControls
-      resizeMode="contain"
+      resizeMode="cover"
       isLooping
       onPlaybackStatusUpdate={status => setStatus(() => status)}
     />
@@ -156,7 +157,7 @@ const InterviewOne = () => {
         style={{ width, height: 730 }}
         source={require('./assets/videos/morph.mp4')}
         useNativeControls
-        resizeMode="contain"
+        resizeMode="cover"
         isLooping
         onPlaybackStatusUpdate={status => setStatus(() => status)}
       />
@@ -213,7 +214,7 @@ export default App => {
       </TouchableOpacity>
   )}
 
- 
+
   useEffect(() => {
     if(countdownTimer > 0){ 
       timer = setTimeout( () => {
