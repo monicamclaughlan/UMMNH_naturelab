@@ -2,6 +2,7 @@ import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 import { useFonts } from 'expo-font';
 import { TurtleHome } from '../turtle_slides/TurtleHome';
+import { TurtleOne } from '../turtle_slides/TurtleOne';
 
 
 const Stack = createStackNavigator()
@@ -18,6 +19,7 @@ const TurtleStack = () => {
     return (
         <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name='TurtleHome' component={TurtleHome}/>
+            <Stack.Screen name='TurtleOne' component={TurtleOne}/>
         </Stack.Navigator>
 
     );

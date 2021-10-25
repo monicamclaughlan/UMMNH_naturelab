@@ -231,7 +231,8 @@ export default App => {
   
   let [fontsLoaded] = useFonts({
     'Eurostile': require('./assets/fonts/EurostileLTStd-Bold.otf'),
-    'AG': require('./assets/fonts/AGaramondPro-Regular.otf')
+    'AG': require('./assets/fonts/AGaramondPro-Regular.otf'), 
+    'Jim': require('./assets/fonts/JimNightshade-Regular.ttf')
   });
 
   if (!fontsLoaded) {

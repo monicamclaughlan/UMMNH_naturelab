@@ -12,6 +12,10 @@ export const Acknowledgements = () => {
     const {countdownTimer, setCountdownTimer} = React.useContext(TimerContext);
     const navigation = useNavigation()
 
+    const goBack = () => {
+        navigation.goBack();
+      };
+
     const goHome = () => {
         navigation.navigate('SnakeHome')
     }
@@ -26,10 +30,12 @@ export const Acknowledgements = () => {
             <Text style={styles.thankText}>We'd like to thank Dr. Matthew Holding for mentoring us on this project, and Dr. Alison Davis-Rabosky and Hayley Crowell for providing us this opportunity as part of the MORPH project assignment for the EEB 450: Amphibians and Reptiles class.  We'd also like to thank the University of Michigan Natural History Museum for allowing us to present this project as part of a real exhibit.</Text>
         </View>
         <View style={styles.authorView}>
+            <Pressable onPress={goBack}>
             <View style={styles.backView}>
                 <AntDesign name="caretleft" size={30} color="black" />
                 <Text style={styles.backText}>Go Back</Text>
             </View>
+            </Pressable>
             <Pressable onPress={goHome}><View style={styles.homeView}>
                 <Text style={styles.homeText}>Return to Home page</Text>
             </View></Pressable>
