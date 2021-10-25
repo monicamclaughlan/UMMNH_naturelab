@@ -27,6 +27,16 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "packagerOpts": {
+      "assetExts": [
+        "ttf",
+        "mp4",
+        "otf",
+        "xml",
+        "obj",
+        "mtl"
+      ]
     }
   }
 }
