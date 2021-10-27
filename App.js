@@ -14,8 +14,11 @@ import SnakeStack from './navigation/SnakeStack';
 import TurtleStack from './navigation/TurtleStack';
 import { AntDesign } from '@expo/vector-icons';
 
+const jars = require('./images/jars.png')
+const snake_lady = require('./images/snake_lady.png')
+const salamander = require('./images/salamander.png')
 
-const crocodile = require('./images/crocodile.jpg')
+const crocodile = require('./images/panama.png')
 const snake = require('./images/DSC_9204.png')
 const turtle = require('./images/DSC_0079.png')
 
@@ -38,19 +41,19 @@ const WelcomeScreen = () => {
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
         <View>
           <TouchableOpacity  style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Herpetology')}>
-            <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center'}} source={ crocodile }></Image>
+            <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center'}} source={ jars }></Image>
           </TouchableOpacity>
           <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 230}}>What is Herpetology?</Text>
         </View>
         <View>
           <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Science Communication')}>
-            <Image style={{width:150, height: 150, marginTop: 20, marginBottom: 20, borderRadius: 100, shadowColor: '#000', alignSelf: 'center', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
+            <Image style={{width:150, height: 150, marginTop: 20, marginBottom: 20, borderRadius: 100, shadowColor: '#000', alignSelf: 'center', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake_lady }></Image>
           </TouchableOpacity>
           <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 230}}>Science Communication</Text>
         </View>
         <View>
         <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Project MORPH!')}>
-          <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', alignSelf: 'center', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>
+          <Image style={{resizeMode: 'cover', width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', alignSelf: 'center', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={salamander}></Image>
         </TouchableOpacity>
         <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 230}}>Project MORPH!</Text>
       </View>
