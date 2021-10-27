@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "nature-lab",
+    "name": "Project: MORPH!",
     "slug": "nature-lab",
     "version": "1.0.0",
     "orientation": "landscape",
-    "icon": "./assets/icon.png",
+    "icon": "./images/spotted.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./images/DSC_0079.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,9 +17,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "edu.umich.mobile.morph", 
+      "buildNumber": "1.0.0"
     },
     "android": {
+      "package": "edu.umich.mobile.morph",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
