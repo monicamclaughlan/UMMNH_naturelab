@@ -158,7 +158,7 @@ const InterviewOne = () => {
       <Video
         ref={video}
         style={{ width, height: 730 }}
-        source={require('./assets/videos/Smaller_EEB.m4v')}
+        source={require('./assets/videos/project.mp4')}
         useNativeControls
         resizeMode="contain"
         // isLooping

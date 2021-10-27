@@ -4,7 +4,7 @@
     "slug": "nature-lab",
     "version": "1.0.0",
     "orientation": "landscape",
-    "icon": "./images/spotted.png",
+    "icon": "./images/Spotted_Splash.png",
     "splash": {
       "image": "./images/DSC_0079.png",
       "resizeMode": "contain",
