@@ -30,34 +30,34 @@ const WelcomeScreen = () => {
     setCountdownTimer(300)
   }
   }>
-    <View style={[styles.textContainer, {marginTop:40, paddingTop: 20}]}>
+    <View style={[styles.textContainer, {marginTop:20, paddingTop: 20}]}>
       <Text style={styles.basetext}>Project: MORPH! </Text> 
     </View>
-    <View style={{backgroundColor: '#B4D88B', width: '90%', borderRadius: 10, marginTop: 20}}>
+    <View style={{backgroundColor: '#B4D88B', width: '90%', borderRadius: 10, marginTop: 10}}>
       <Text style={{textAlign: 'center', fontSize: 24, fontFamily: 'Eurostile', paddingTop: 20, paddingBottom: 15 }}>Click On A Video Below To Hear More</Text>
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
         <View>
           <TouchableOpacity  style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Herpetology')}>
             <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center'}} source={ crocodile }></Image>
           </TouchableOpacity>
-          <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 300}}>What is Herpetology?</Text>
+          <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 230}}>What is Herpetology?</Text>
         </View>
         <View>
           <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Science Communication')}>
-            <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', alignSelf: 'center', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
+            <Image style={{width:150, height: 150, marginTop: 20, marginBottom: 20, borderRadius: 100, shadowColor: '#000', alignSelf: 'center', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={ snake }></Image>
           </TouchableOpacity>
-          <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 300}}>Science Communication</Text>
+          <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 230}}>Science Communication</Text>
         </View>
         <View>
         <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Project MORPH!')}>
           <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, shadowColor: '#000', alignSelf: 'center', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>
         </TouchableOpacity>
-        <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 300}}>Project MORPH!</Text>
+        <Text style={{fontSize: 24, fontFamily: 'AG', textAlign: 'center', marginBottom: 20, width: 230}}>Project MORPH!</Text>
       </View>
       </View>
     </View>
   
-    <View style={{backgroundColor: '#B4D88B', width: '90%', borderRadius: 10, marginTop: 20}}>
+    <View style={{backgroundColor: '#B4D88B', width: '90%', borderRadius: 10, marginTop: 10}}>
       <Text style={{textAlign: 'center', fontSize: 24, fontFamily: 'Eurostile', paddingTop: 20, paddingBottom: 15}}>Click On The Images Below To Learn More About Each Project</Text>
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
         <View>
@@ -74,7 +74,7 @@ const WelcomeScreen = () => {
           <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, paddingBottom: 20, marginBottom: 45}}>How do snake fangs work?</Text>
         </View>
         <View>
-          <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Turtle')}>
+          <TouchableOpacity style={{shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 5, shadowOffset: {width: 0, height: 2}}} onPress={() => navigation.navigate('Turtle Shells')}>
             <Image style={{width:150, height: 150, margin: 20, borderRadius: 100, alignSelf: 'center', shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2, shadowOffset: {width: 0, height: 2}}} source={turtle}></Image>  
           </TouchableOpacity>
           <Text style={{textAlign: 'center', fontFamily: 'AG', color: 'black', fontSize: 24, width: 300, marginBottom: 20}}>What do Michigan turtles look like inside their shells?</Text>
@@ -95,10 +95,10 @@ const InterviewOne = () => {
     <Video
       ref={video}
       style={{ width, height: 730 }}
-      source={require('./assets/videos/morph.mp4')}
+      source={require('./assets/videos/herpetology.mp4')}
       useNativeControls
       resizeMode="contain"
-      isLooping
+      // isLooping
       onPlaybackStatusUpdate={status => setStatus(() => status)}
     />
     <View style={[styles.buttons, {paddingBottom: 10}]}>
@@ -126,10 +126,10 @@ const InterviewOne = () => {
     <Video
       ref={video}
       style={{ width, height: 730 }}
-      source={require('./assets/videos/morph.mp4')}
+      source={require('./assets/videos/communication.mp4')}
       useNativeControls
       resizeMode="contain"
-      isLooping
+      // isLooping
       onPlaybackStatusUpdate={status => setStatus(() => status)}
     />
     <View style={[styles.buttons, {paddingBottom: 10}]}>
@@ -155,10 +155,10 @@ const InterviewOne = () => {
       <Video
         ref={video}
         style={{ width, height: 730 }}
-        source={require('./assets/videos/morph.mp4')}
+        source={require('./assets/videos/project.mp4')}
         useNativeControls
         resizeMode="contain"
-        isLooping
+        // isLooping
         onPlaybackStatusUpdate={status => setStatus(() => status)}
       />
       <View style={[styles.buttons, {paddingBottom: 10}]}>
@@ -257,15 +257,18 @@ export default App => {
                   height: 45,
                   backgroundColor: 'transparent', 
                 },
-                headerBackTitleVisible: false,
+                headerBackTitle: 'Home',
+                headerBackTitleStyle: {
+                  color: 'black'
+                },
                 headerBackImage: () => <AntDesign style={{marginLeft: 20}} name="caretleft" size={20} color={'black'}/>
               }}
           > 
             <Stack.Screen name="Welcome" component={WelcomeScreen} options={{header: () => null}}/>
             <Stack.Screen name="Phytosaur" component={PhytosaurStack} />
             <Stack.Screen name="Snake Fangs" component={SnakeStack} />
-            <Stack.Screen name="Turtle Shells" component={TurtleScreen}/>
-            <Stack.Screen name="Turtle" component={TurtleStack} />
+            {/* <Stack.Screen name="Turtle Shells" component={TurtleScreen}/> */}
+            <Stack.Screen name="Turtle Shells" component={TurtleStack} />
             <Stack.Screen name="Herpetology" component={InterviewOne} options={{header: () => null}}/>
             <Stack.Screen name="Science Communication" component={InterviewTwo} options={{header: () => null}}/>
             <Stack.Screen name="Project MORPH!" component={InterviewThree} options={{header: () => null}}/>
@@ -287,7 +290,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     alignItems: 'center',
     backgroundColor: '#4F6F18',
-    marginTop: 40,
+    marginTop: 30,
     width: '90%',
     borderRadius: 10,
   },
@@ -310,9 +313,9 @@ const styles = StyleSheet.create({
   images: { 
     flex: 1,
     alignItems: 'center',
-    marginTop: 50,
+    marginTop: 20,
     backgroundColor: '#B4D88B',
-    padding: 50,
+    // padding: 50,
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '90%',
