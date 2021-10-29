@@ -98,7 +98,9 @@ const InterviewOne = () => {
     <Video
       ref={video}
       style={{ width, height: 730 }}
-      source={require('./assets/videos/herpetology.mp4')}
+      source={{
+        uri: 'https://ummnh.s3.us-east-2.amazonaws.com/what_is_herpetology+_dissolve_FINAL_captions.mp4',
+      }}
       useNativeControls
       resizeMode="contain"
       // isLooping
@@ -129,7 +131,9 @@ const InterviewOne = () => {
     <Video
       ref={video}
       style={{ width, height: 730 }}
-      source={require('./assets/videos/communication.mp4')}
+      source={{
+        uri: 'https://ummnh.s3.us-east-2.amazonaws.com/SciComm_MusCollab_dissolve_FINAL-captions.mp4',
+      }}
       useNativeControls
       resizeMode="contain"
       // isLooping
@@ -158,7 +162,9 @@ const InterviewOne = () => {
       <Video
         ref={video}
         style={{ width, height: 730 }}
-        source={require('./assets/videos/project.mp4')}
+        source={{
+          uri: 'https://ummnh.s3.us-east-2.amazonaws.com/EEB450_ProjectMORPH_dissolve_FINAL_captions.mp4',
+        }}
         useNativeControls
         resizeMode="contain"
         // isLooping
@@ -207,7 +213,9 @@ export default App => {
       <TouchableOpacity onPress={toggle}>
         <View>
           <Video
-              source={require('./assets/videos/morph.mp4')}
+              source={{
+                uri: 'https://ummnh.s3.us-east-2.amazonaws.com/morph_attract_PressStart.mp4',
+              }}
               shouldPlay
               isLooping
               resizeMode="contain"
